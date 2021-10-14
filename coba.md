@@ -51,6 +51,7 @@ Solusi yang dilakukan untuk memenuhi tujuan dari proyek ini di antaranya:
   Dengan adanya pengaturan _hyperparameter_ ini harapannya akan menciptakan model yang lebih akurat dan memiliki nilai _error rate_ kecil. 
 ## Data Understanding
 ![Capture](https://user-images.githubusercontent.com/41296422/137277185-d5e6a42d-47e9-4468-bacf-90e2a0c2399e.JPG)
+
 Informasi Dataset:
 
 Dataset: [EURUSD=X](https://finance.yahoo.com/quote/EURUSD%3DX/history?period1=1070236800&period2=1634083200&interval=1d&filter=history&frequency=1d&includeAdjustedClose=true)
