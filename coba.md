@@ -127,7 +127,7 @@ Nilai RMSE didapatkan dari perhitungan jumlah setiap nilai prediksi dikurangi ni
 
 <img src="https://user-images.githubusercontent.com/41296422/137367898-3f9c131d-a300-4c70-a9bc-8e7d8d1458ee.gif" width="30%" height="30%">
 
-Nilai MAE didapatkan dari perhitungan jumlah setiap nilai asli dikurangi nilai prediksi dipangkat dua lalu dibagikan dengan banyaknya data, dan nilai tersebut mutlak (bukan negatif).
+Nilai MAE didapatkan dari perhitungan jumlah setiap nilai asli dikurangi nilai prediksi dipangkat dua lalu dibagikan dengan banyaknya data, dan nilai tersebut mutlak (tidak negatif).
 
 Pada tabel di bawah ini adalah hasil dari perhitungan RMSE dan MAE dari kedua model di atas.
 
