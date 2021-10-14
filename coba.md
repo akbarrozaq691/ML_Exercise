@@ -41,9 +41,9 @@ Solusi yang dilakukan untuk memenuhi tujuan dari proyek ini di antaranya:
     - Memiliki arsitektur yang kompleks sehingga beban komputasi menjadi tinggi terutama ketika diterapkan pada kasus skala besar
 - Kemudian model _baseline_ tersebut dikembangkan dengan pengaturan _hyperparameter_ dengan cara membuat _custom loss function_, menambahkan _layer_ LSTM, dan penerapan _learning rate_ pada _optimizer function_ dimana dengan memodifikasi parameter tersebut, dapat mengurangi nilai _error_. Penggunaan _custom loss function_ diambil dari metode yang bernama _Huber_. Berikut adalah rumus dari _Huber Loss Function_
 
-![Capture](https://user-images.githubusercontent.com/41296422/137327705-7799a336-9a43-4d24-9c9e-660b137d8fa0.JPG)
+    ![Capture](https://user-images.githubusercontent.com/41296422/137327705-7799a336-9a43-4d24-9c9e-660b137d8fa0.JPG)
 
-  Cara kerja dari metode tersebut antara lain:
+    Cara kerja dari metode tersebut antara lain:
      - Menghitung nilai _error_ terlebih dahulu dimana nilai tersebut didapatkan dari pengurangan antara data asli dan data prediksi
      - Menghitung nilai _loss_ terkecil dengan cara nilai _error_ pangkat 2 dibagi 2
      - Menghitung nilai _loss_ terbesar dengan cara nilai _thershold_ dikali dengan nilai _error_ mutlaik dikurangi 1/2 dari nilai _threshold_
