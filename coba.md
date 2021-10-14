@@ -46,7 +46,7 @@ Solusi yang dilakukan untuk memenuhi tujuan dari proyek ini di antaranya:
     Cara kerja dari metode tersebut antara lain:
      - Menghitung nilai _error_ terlebih dahulu dimana nilai tersebut didapatkan dari pengurangan antara data asli dan data prediksi
      - Menghitung nilai _loss_ terkecil dengan cara nilai _error_ pangkat 2 dibagi 2
-     - Menghitung nilai _loss_ terbesar dengan cara nilai _thershold_ dikali dengan nilai _error_ mutlaik dikurangi 1/2 dari nilai _threshold_
+     - Menghitung nilai _loss_ terbesar dengan cara nilai _thershold_ dikali dengan nilai _error_ mutlak dikurangi 1/2 dari nilai _threshold_
      - Lalu akan dicari nilai _loss_ sesuai _thershold_
   Dengan adanya pengaturan _hyperparameter_ ini harapannya akan menciptakan model yang lebih akurat dan memiliki nilai _error rate_ kecil. 
 ## Data Understanding
@@ -114,7 +114,7 @@ Hasilnya dapat kita lihat pada grafik berikut ini:
 Secara kasat mata, dari kedua model tersebut dapat memprediksi data uji dengan baik, akan tetapi kita harus memilih model manakah yang terbaik dengan cara mencari model dengan nilai _error rate_ terkecil.
 
 ## Evaluating
-Pada pryek ini, model yang dibuat merupakan kasus regresi dan menggunakan metriks perhitungan _Root Mean Squared Error_ (RMSE) dan _Mean Absolute Error_ (MAE). Berikut adalah rumus dari perhitungan RMSE dan MAE:
+Pada proyek ini, model yang dibuat merupakan kasus regresi dan menggunakan metriks perhitungan _Root Mean Squared Error_ (RMSE) dan _Mean Absolute Error_ (MAE). Penggunaan metriks tersebut karena memberikan bobot yang relatif tinggi untuk kesalahan besar. Berikut adalah rumus dari perhitungan RMSE dan MAE:
 
 **RMSE**
 ![1_lqDsPkfXPGen32Uem1PTNg](https://user-images.githubusercontent.com/41296422/137367800-2dc7bd32-f39e-447e-915f-c623a5192a70.png)
@@ -124,7 +124,7 @@ Nilai RMSE didapatkan dari perhitungan jumlah setiap nilai prediksi dikurangi ni
 **MAE**
 ![1_OVlFLnMwHDx08PHzqlBDag](https://user-images.githubusercontent.com/41296422/137367898-3f9c131d-a300-4c70-a9bc-8e7d8d1458ee.gif)
 
-Nilai MAE didapatkan dari perhitungan jumlah setiap nilai asli dikurangi nilai prediksi dipangkat dua lalu dibagikan dengan banyaknya data dan terakhir diakarkan.
+Nilai MAE didapatkan dari perhitungan jumlah setiap nilai asli dikurangi nilai prediksi dipangkat dua lalu dibagikan dengan banyaknya data, dan nilai tersebut mutlak (bukan negatif).
 
 Pada tabel di bawah ini adalah hasil dari perhitungan RMSE dan MAE dari kedua model di atas.
 
