@@ -85,12 +85,10 @@ Berikut adalah tahapan pra-pemrosesan data seperti yang telah dijelaskan pada _s
     | --- | --- |
     |Date |0    |
     |Close|29   |
+    
     Menghapus data yang kosong adalah salah satu solusi untuk mengatasi _missing value_. Pada saat menganalisis data tersebut, ternyata nilai _null_ merupakan data di hari libur dimana tidak ada perdagangan dalam hari tersebut. Maka, alangkah lebih baik untuk dihilangkan.
 - Melakukan **pembagian** dataset menjadi dua bagian dengan persentase 80% untuk data latih dan 20% untuk data uji
     Pada proses pengujian model, maka perlu dilakukan pembagian dataset menjadi dua atau tiga bagian. Pada proyek ini dilakukan dua bagian saja yakni pada data latih dan data uji. Data latih terbagi dengan rasio 80% dari data asli, dimana dilakukan sepenuhnya untuk melatih model, sedangkan data uji terbagi dengan rasio 20% dari data asli merupakan data yang belum pernah dilihat oleh model dan diharapkan model dapat memiliki performa yang sama baiknya pada data uji seperti pada data latih. Karena pada dataset tersebut bersifat _univariate_, cara membagi data tersebut dengan membuat batasan data yang dijangkau.
 - Melakukan **standarisasi data** pada fitur data
-  Standarisasi dilakukan berfungsi untuk membuat komputasi dari pembuatan model dapat berjalan lebih cepat karena rentang datanya hanya antara 0-1. Ada berbagai cara standarisasi, akan tetapi pada pemodelan kali ini menggunakan MinMaxScaler. Berikut adalah rumus dari MinMaxScaler:
-  ![EuitP](https://user-images.githubusercontent.com/41296422/137363097-8cdad3ba-5849-4fee-bd54-a8c8e5e6b1b6.png)
-  
-  MinMaxScaler ini akan mencari nilai minimum dan maksimum dari sebuah data, lalu dikomputasikan dengan rumus yang ada di atas, dimana `x` tersebut mewakili data yang diinputkan
+  Standarisasi dilakukan berfungsi untuk membuat komputasi dari pembuatan model dapat berjalan lebih cepat karena rentang datanya hanya antara 0-1. Ada berbagai cara standarisasi, akan tetapi pada pemodelan kali ini menggunakan MinMaxScaler.
 - Karena data bersifat *time-series*, maka alangkah lebih baik diubah menjadi data sekuensial menggunakan TimeseriesGenerator
