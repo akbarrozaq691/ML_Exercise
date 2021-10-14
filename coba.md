@@ -98,3 +98,15 @@ Berikut adalah tahapan pra-pemrosesan data seperti yang telah dijelaskan pada _s
   Data _time series_ harus diubah menjadi struktur sampel dengan komponen _input_ dan _output_ sebelum dapat digunakan agar sesuai dengan _supervised learning model_. Ini bisa menjadi tantangan jika harus melakukan transformasi ini secara _manual_. TimeseriesGenerator salah satu solusi untuk mengubah data deret waktu _univariate_ secara otomatis menjadi sampel, dan siap untuk melatih model _deep learning_ [(Machine learning mastery, 2020)](https://machinelearningmastery.com/how-to-use-the-timeseriesgenerator-for-time-series-forecasting-in-keras/).
 
 ## Modelling
+Setelah melakukan pra-pemrosesan data yang baik pada tahap modeling akan dilakukan dua hal, yakni tahap pembuatan model _baseline_ dan pembuatan model yang dikembangkan.
+- Model _Baseline_
+  Pada tahap ini saya membuat model dasar dengan menggunakan modul tensorflow yakni LSTM tanpa menggunakan parameter tambahan. Lalu melakukan prediksi kepada data ujinya.
+- Model yang dikembangkan
+  Kemudian setelah melihat kinerja model baseline, agar dapat bekerja lebih optimal lagi maka digunakan sebuah fungsi untuk mencari _hyperparameter_ yang optimal dengan cara membuat _custom loss function_, menambahkan _layer_ LSTM, dan penerapan _learning rate_ pada _optimizer function_. Setelah ditemukan yang optimal, kemudian _hyperparameter_ tersebut diterapkan ke model baseline.
+
+Hasilnya dapat kita lihat pada grafik berikut ini:
+![newplot (3)](https://user-images.githubusercontent.com/41296422/137366546-6eabe9a2-d759-4bcd-ad28-9e156d12c3ea.png)
+Model _Baseline_
+
+![newplot (2)](https://user-images.githubusercontent.com/41296422/137366585-2cff2287-6756-48c2-a670-fb9a1434631d.png)
+Model yang dikembangkan
