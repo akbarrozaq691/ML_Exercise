@@ -3,7 +3,7 @@
 ## Domain Proyek
 Domain proyek yang dipilih dalam proyek *machine learning* ini adalah mengenai **keuangan** dengan judul proyek "Prediksi Nilai Tukar Uang EUR terhadap USD".
 
-*Foreign exchange* (Forex) adalah pasar yang mengkhususkan diri dalam perdagangan pertukaran valuta asing. Dalam pasar *forex* sendiri seseorang yang melakukan perdagangan biasa disebut dengan *trader* memiliki dua pilihan, baik membeli atau menjual mata uang yang diperdagangkan. Jika kurs jual mata uang lebih besar dari tingkat pembelian, itu menghasilkan keuntungan bagi orang tersebut [(Islam et.al., 2020)](https://www.researchgate.net/publication/343342034). Nilai tukar mata uang yang sering tidak stabil menjadikan bisnis *forex* sebagai bisnis beresiko tinggi tetapi juga sebagai bisnis dengan keuntungan besar pula sehingga nilai pertukaran yang dialami perlu diperhatikan. Dari aspek tersebut maka diperlukan proses prediksi yang tepat untuk meminimalkan resiko dan meningkatkan sebuah keuntungan [(Kusumodestoni, 2015)](https://jurnal.umk.ac.id/index.php/simet/article/view/453). Data tersebut bersifat *time-series* (sekuensial) sehingga perlu algoritma yang dapat mengatasi masalah tersebut. Sehingga, teknik *predictive modelling* sangat cocok digunakan untuk diterapkan pada kasus tersebut.
+*Foreign exchange* (Forex) adalah pasar yang mengkhususkan diri dalam perdagangan pertukaran valuta asing. Dalam pasar *forex* sendiri seseorang yang melakukan perdagangan biasa disebut dengan *trader* memiliki dua pilihan, baik membeli atau menjual mata uang yang diperdagangkan. Jika kurs jual mata uang lebih besar dari tingkat pembelian, itu menghasilkan keuntungan bagi orang tersebut [[1]](https://www.researchgate.net/publication/343342034). Nilai tukar mata uang yang sering tidak stabil menjadikan bisnis *forex* sebagai bisnis beresiko tinggi tetapi juga sebagai bisnis dengan keuntungan besar pula sehingga nilai pertukaran yang dialami perlu diperhatikan. Dari aspek tersebut maka diperlukan proses prediksi yang tepat untuk meminimalkan resiko dan meningkatkan sebuah keuntungan [[2]](https://jurnal.umk.ac.id/index.php/simet/article/view/453). Data tersebut bersifat *time-series* (sekuensial) sehingga perlu algoritma yang dapat mengatasi masalah tersebut. Sehingga, teknik *predictive modelling* sangat cocok digunakan untuk diterapkan pada kasus tersebut.
 
 ## Business Understanding
 ### Problem Statements
@@ -25,7 +25,7 @@ Solusi yang dilakukan untuk memenuhi tujuan dari proyek ini di antaranya:
   - Karena data bersifat *time-series*, maka alangkah lebih baik diubah menjadi data sekuensial menggunakan TimeseriesGenerator
   
   Poin pra-pemrosesan data akan dijelaskan secara rinci pada bagian `Data Preparation`.
-- Untuk pembuatan model sendiri menggunakan algoritma **LSTM (Long-Short Term Memory)** sebagai model _baseline_. Algoritma tersebut dipilih karena mudah diimplementasikan dan juga cocok untuk kasus data sekuensial (_time series_). Algoritma ini dapat mengingat masa lalu untuk memprediksi masa depan melalui _nodes_ pengingat. Cara kerja algoritma ini adalah sebagai berikut (diterjemahkan dari [(Luwiji, 2020)](https://pypi.org/project/luwiji/)):
+- Untuk pembuatan model sendiri menggunakan algoritma **LSTM (Long-Short Term Memory)** sebagai model _baseline_. Algoritma tersebut dipilih karena mudah diimplementasikan dan juga cocok untuk kasus data sekuensial (_time series_). Algoritma ini dapat mengingat masa lalu untuk memprediksi masa depan melalui _nodes_ pengingat. Cara kerja algoritma ini adalah sebagai berikut (diterjemahkan dari [[3]](https://pypi.org/project/luwiji/)):
   - Data akan masuk ke dalam _input gate_ terlebih dahulu
   - Data yang telah masuk akan dipelajari pada _short term memory_ 
   - Pada ingatan lama (_long term memory_), data yang tidak berguna akan dilupakan
@@ -34,10 +34,10 @@ Solusi yang dilakukan untuk memenuhi tujuan dari proyek ini di antaranya:
   - Data yang diprediksi akan dikeluarkan pada _output gate_
 
   Selain itu, berikut ini adalah kelebihan dan kelemahan algoritma LSTM:
-  - Kelebihan (diterjemahkan dari [(Zhang, 2016)](https://www.springer.com/gp/book/9789811026652)):
+  - Kelebihan (diterjemahkan dari [[4]](https://www.springer.com/gp/book/9789811026652)):
     - Adanya arsitektur mengingat dan melupakan output yang akan diproses kembali menjadi input
     - Dapat mempertahankan error yang terjadi ketika melakukan backpropagation sehingga tidak memungkinkan kesalahan meningkat
-  - Kekurangan (diterjemahkan dari [(Li, 2018)](https://arxiv.org/abs/1803.04831)):
+  - Kekurangan (diterjemahkan dari [[5]](https://arxiv.org/abs/1803.04831)):
     - Memiliki arsitektur yang kompleks sehingga beban komputasi menjadi tinggi terutama ketika diterapkan pada kasus skala besar
 - Kemudian model _baseline_ tersebut dikembangkan dengan pengaturan _hyperparameter_ dengan cara membuat _custom loss function_, menambahkan _layer_ LSTM, dan penerapan _learning rate_ pada _optimizer function_ dimana dengan memodifikasi parameter tersebut, dapat mengurangi nilai _error_. Penggunaan _custom loss function_ diambil dari metode yang bernama _Huber_. Berikut adalah rumus dari _Huber Loss Function_
 
@@ -96,7 +96,7 @@ Berikut adalah tahapan pra-pemrosesan data seperti yang telah dijelaskan pada _s
 
   Pada rumus tersebut, simbol `x` mewakili data yang diinputkan. MinMaxScaler sendiri bekerja dengan cara data asli akan dikurangi dengan data terkecil lalu dibagi dengan pengurungan dari data terbesar dan data terkecil.
 - Penggunaan TimeseriesGenerator
-  Data _time series_ harus diubah menjadi struktur sampel dengan komponen _input_ dan _output_ sebelum dapat digunakan agar sesuai dengan _supervised learning model_. Ini bisa menjadi tantangan jika harus melakukan transformasi ini secara _manual_. TimeseriesGenerator salah satu solusi untuk mengubah data deret waktu _univariate_ secara otomatis menjadi sampel, dan siap untuk melatih model _deep learning_ [(Machine learning mastery, 2020)](https://machinelearningmastery.com/how-to-use-the-timeseriesgenerator-for-time-series-forecasting-in-keras/).
+  Data _time series_ harus diubah menjadi struktur sampel dengan komponen _input_ dan _output_ sebelum dapat digunakan agar sesuai dengan _supervised learning model_. Ini bisa menjadi tantangan jika harus melakukan transformasi ini secara _manual_. TimeseriesGenerator salah satu solusi untuk mengubah data deret waktu _univariate_ secara otomatis menjadi sampel, dan siap untuk melatih model _deep learning_ [[6]](https://machinelearningmastery.com/how-to-use-the-timeseriesgenerator-for-time-series-forecasting-in-keras/).
 
 ## Modelling
 Setelah melakukan pra-pemrosesan data yang baik pada tahap modeling akan dilakukan dua hal, yakni tahap pembuatan model _baseline_ dan pembuatan model yang dikembangkan.
@@ -137,3 +137,17 @@ Pada tabel di bawah ini adalah hasil dari perhitungan RMSE dan MAE dari kedua mo
 |Model yang dikembangkan|0.001476|0.001147|
 
 Dapat disimpulkan bahwa, model yang dikembangkan lebih baik daripada model _baseline_.
+
+## *References*
+
+[[1]](https://doi.org/10.3390/a13080186)	M. S. Islam, E. Hossain, A. Rahman, M. S. Hossain, dan K. Andersson, “A Review on Recent Advancements in FOREX Currency Prediction,” Algorithms, vol. 13, no. 8, hal. 186, Jul 2020, https://doi.org/10.3390/a13080186.
+
+[[2]](https://doi.org/10.24176/simet.v6i2.453)	R. H. Kusumodestoni dan S. Suyatno, “PREDIKSI FOREX MENGGUNAKAN MODEL NEURAL NETWORK,” Simetris  J. Tek. Mesin, Elektro dan Ilmu Komput., vol. 6, no. 2, hal. 205, Nov 2015, https://doi.org/10.24176/simet.v6i2.453.
+
+[[3]](https://pypi.org/project/luwiji/)	W. D. K. Putra, “luwiji,” 2020. https://pypi.org/project/luwiji/ (diakses Okt 15, 2021).
+
+[[4]](https://doi.org/10.1007/978-981-10-2669-0)	H. Zhang, Q. Yan, G. Zhang, dan Z. Jiang, Theory, Methodology, Tools and Applications for Modeling and Simulation of Complex Systems, vol. 643, no. October. Singapore: Springer Singapore, 2016. https://doi.org/10.1007/978-981-10-2669-0.
+
+[[5]](https://doi.org/10.1109/CVPR.2018.00572)	S. Li, W. Li, C. Cook, C. Zhu, dan Y. Gao, “Independently Recurrent Neural Network (IndRNN): Building A Longer and Deeper RNN,” Proc. IEEE Comput. Soc. Conf. Comput. Vis. Pattern Recognit., no. 1, hal. 5457–5466, 2018, https://doi.org/10.1109/CVPR.2018.00572.
+
+[[6]](https://machinelearningmastery.com/how-to-use-the-timeseriesgenerator-for-time-series-forecasting-in-keras/)	J. Brownlee, “How to Use the TimeseriesGenerator for Time Series Forecasting in Keras,” 2018. https://machinelearningmastery.com/how-to-use-the-timeseriesgenerator-for-time-series-forecasting-in-keras/ (diakses Okt 13, 2021).
