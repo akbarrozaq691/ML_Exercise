@@ -65,4 +65,13 @@ Dataset: [EURUSD=X](https://finance.yahoo.com/quote/EURUSD%3DX/history?period1=1
 |Time Frame yang Digunakan|Daily                                                                                                   |
 |Range Waktu              |1 Desember 2003 - 13 Oktober 2021                                                                       |
 
-Pada berkas yang diunduh yakni `EURUSD=X.csv`
+Pada berkas yang diunduh yakni `EURUSD=X.csv` berisi informasi metriks nilai tukar uang EUR/USD dengan jumlah 4663 data. Terdapat 6 buah data numerik (tipe data float64) dan 1 buah data _date time_ (tipe data datetime64). Dataset tersebut memiliki data kosong kecuali pada kolom tanggal. Untuk mengenal variabel apa saja pada dataset tersebut, dapat dilihat pada poin-poin sebagai berikut:
+1. `Date`: Tanggal dimana menunjukkan waktu terjadinya pembukaan dan penutup harga, pada dataset kali ini, data tersebut berisi waktu harian dan sangat penting untuk dianalisis apakah harga naik / turun dalam satu hari terakhir
+2. `Open`: Harga pertama kali transaksi dilakukan pada hari itu. Harga _open_ tersebut mencerminkan semua informasi pasar yang ada, yang terjadi atau muncul diantara harga penutupan sehari sebelumnya dan ketika saat-saat terakhir pemodal boleh memasukkan order ke mesin bursa.
+3. `High`: Kisaran harga pergerakan harian dari saham tersebut dimana pemodal memiliki keberanian atau rasionalitas untuk melakukan posisi beli.
+4. `Low`: Kisaran harga pergerakan harian dari saham tersebut dimana pemodal memiliki keberanian atau rasionalitas untuk melakukan posisi jual.
+5. `Close`: Harga close ini mencerminkan semua informasi yang ada pada semua pelaku pasar (terutama pelaku pasar institusi yang memiliki informasi yang lebih akurat) pada saat perdagangan saham tersebut berakhir.
+6. `Adjusted Close`: Seperti halnya variabel close, variabel adjust close merupakan harga penutupan yang disesuaikan.
+7. `Volume`: Representasi dari aktivitas yang berlangsung selama suatu periode trading.
+
+Pada kasus kali ini yang akan diterapkan adalah variabel `Date` dan `Close` karena keduanya bisa memicu signal beli atau signal jual untuk waktu yang akan datang.
