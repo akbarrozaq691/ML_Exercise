@@ -94,4 +94,7 @@ Berikut adalah tahapan pra-pemrosesan data seperti yang telah dijelaskan pada _s
   ![EuitP](https://user-images.githubusercontent.com/41296422/137363538-3d725636-fb74-4ec5-9f55-0fde810b5c71.png)
 
   Pada rumus tersebut, simbol `x` mewakili data yang diinputkan. MinMaxScaler sendiri bekerja dengan cara data asli akan dikurangi dengan data terkecil lalu dibagi dengan pengurungan dari data terbesar dan data terkecil.
-- Karena data bersifat *time-series*, maka alangkah lebih baik diubah menjadi data sekuensial menggunakan TimeseriesGenerator
+- Penggunaan TimeseriesGenerator
+  Data _time series_ harus diubah menjadi struktur sampel dengan komponen _input_ dan _output_ sebelum dapat digunakan agar sesuai dengan _supervised learning model_. Ini bisa menjadi tantangan jika harus melakukan transformasi ini secara _manual_. TimeseriesGenerator salah satu solusi untuk mengubah data deret waktu _univariate_ secara otomatis menjadi sampel, dan siap untuk melatih model _deep learning_ [(Machine learning mastery, 2020)](https://machinelearningmastery.com/how-to-use-the-timeseriesgenerator-for-time-series-forecasting-in-keras/).
+
+## Modelling
