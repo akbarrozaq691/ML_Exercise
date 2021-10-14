@@ -34,7 +34,7 @@ Solusi yang dilakukan untuk memenuhi tujuan dari proyek ini di antaranya:
   - Data yang diprediksi akan dikeluarkan pada _output gate_
 
   Selain itu, berikut ini adalah kelebihan dan kelemahan algoritma LSTM:
-  - Kelebihan (diterjemahkan dari [(Zhang, 2016)](https://www.springer.com/gp/book/9789811026652):
+  - Kelebihan (diterjemahkan dari [(Zhang, 2016)](https://www.springer.com/gp/book/9789811026652)):
     - Adanya arsitektur mengingat dan melupakan output yang akan diproses kembali menjadi input
     - Dapat mempertahankan error yang terjadi ketika melakukan backpropagation sehingga tidak memungkinkan kesalahan meningkat
   - Kekurangan (diterjemahkan dari [(Li, 2018)](https://arxiv.org/abs/1803.04831)):
