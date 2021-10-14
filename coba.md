@@ -117,7 +117,7 @@ Secara kasat mata, dari kedua model tersebut dapat memprediksi data uji dengan b
 Pada proyek ini, model yang dibuat merupakan kasus regresi dan menggunakan metriks perhitungan _Root Mean Squared Error_ (RMSE) dan _Mean Absolute Error_ (MAE). Penggunaan metriks tersebut karena memberikan bobot yang relatif tinggi untuk kesalahan besar. Berikut adalah rumus dari perhitungan RMSE dan MAE:
 
 **RMSE**
-<img src="https://user-images.githubusercontent.com/41296422/137367800-2dc7bd32-f39e-447e-915f-c623a5192a70.png" width="50%" height="50%">
+<img src="https://user-images.githubusercontent.com/41296422/137367800-2dc7bd32-f39e-447e-915f-c623a5192a70.png" width="30%" height="30%">
 
 Nilai RMSE didapatkan dari perhitungan jumlah setiap nilai prediksi dikurangi nilai asli dipangkat dua lalu dibagikan dengan banyaknya data dan terakhir diakarkan.
 
