@@ -23,7 +23,7 @@ Solusi yang dilakukan untuk memenuhi tujuan dari proyek ini di antaranya:
   - Melakukan **pembagian** dataset menjadi dua bagian dengan persentase 80% untuk data latih dan 20% untuk data uji
   - Melakukan **standarisasi data** pada fitur data
   - Karena data bersifat *time-series*, maka alangkah lebih baik diubah menjadi data sekuensial menggunakan TimeseriesGenerator
-
+  
   Poin pra-pemrosesan data akan dijelaskan secara rinci pada bagian `Data Preparation`.
 - Untuk pembuatan model sendiri menggunakan algoritma **LSTM (Long-Short Term Memory)** sebagai model _baseline_. Algoritma tersebut dipilih karena mudah diimplementasikan dan juga cocok untuk kasus data sekuensial (_time series_). Algoritma ini dapat mengingat masa lalu untuk memprediksi masa depan melalui _nodes_ pengingat. Cara kerja algoritma ini adalah sebagai berikut (diterjemahkan dari [(Luwiji, 2020)](https://pypi.org/project/luwiji/)):
   - Data akan masuk ke dalam _input gate_ terlebih dahulu
@@ -90,5 +90,8 @@ Berikut adalah tahapan pra-pemrosesan data seperti yang telah dijelaskan pada _s
 - Melakukan **pembagian** dataset menjadi dua bagian dengan persentase 80% untuk data latih dan 20% untuk data uji
     Pada proses pengujian model, maka perlu dilakukan pembagian dataset menjadi dua atau tiga bagian. Pada proyek ini dilakukan dua bagian saja yakni pada data latih dan data uji. Data latih terbagi dengan rasio 80% dari data asli, dimana dilakukan sepenuhnya untuk melatih model, sedangkan data uji terbagi dengan rasio 20% dari data asli merupakan data yang belum pernah dilihat oleh model dan diharapkan model dapat memiliki performa yang sama baiknya pada data uji seperti pada data latih. Karena pada dataset tersebut bersifat _univariate_, cara membagi data tersebut dengan membuat batasan data yang dijangkau.
 - Melakukan **standarisasi data** pada fitur data
-  Standarisasi dilakukan berfungsi untuk membuat komputasi dari pembuatan model dapat berjalan lebih cepat karena rentang datanya hanya antara 0-1. Ada berbagai cara standarisasi, akan tetapi pada pemodelan kali ini menggunakan MinMaxScaler.
+  Standarisasi dilakukan berfungsi untuk membuat komputasi dari pembuatan model dapat berjalan lebih cepat karena rentang datanya hanya antara 0-1. Ada berbagai cara standarisasi, akan tetapi pada pemodelan kali ini menggunakan MinMaxScaler. Berikut adalah rumus dari MinMaxScaler:
+  ![EuitP](https://user-images.githubusercontent.com/41296422/137363538-3d725636-fb74-4ec5-9f55-0fde810b5c71.png)
+
+  Pada rumus tersebut, simbol `x` mewakili data yang diinputkan. MinMaxScaler sendiri bekerja dengan cara data asli akan dikurangi dengan data terkecil lalu dibagi dengan pengurungan dari data terbesar dan data terkecil.
 - Karena data bersifat *time-series*, maka alangkah lebih baik diubah menjadi data sekuensial menggunakan TimeseriesGenerator
