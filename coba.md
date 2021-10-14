@@ -105,8 +105,32 @@ Setelah melakukan pra-pemrosesan data yang baik pada tahap modeling akan dilakuk
   Kemudian setelah melihat kinerja model baseline, agar dapat bekerja lebih optimal lagi maka digunakan sebuah fungsi untuk mencari _hyperparameter_ yang optimal dengan cara membuat _custom loss function_, menambahkan _layer_ LSTM, dan penerapan _learning rate_ pada _optimizer function_. Setelah ditemukan yang optimal, kemudian _hyperparameter_ tersebut diterapkan ke model baseline.
 
 Hasilnya dapat kita lihat pada grafik berikut ini:
+**Model _Baseline_**
 ![newplot (3)](https://user-images.githubusercontent.com/41296422/137366546-6eabe9a2-d759-4bcd-ad28-9e156d12c3ea.png)
-Model _Baseline_
 
+**Model yang dikembangkan**
 ![newplot (2)](https://user-images.githubusercontent.com/41296422/137366585-2cff2287-6756-48c2-a670-fb9a1434631d.png)
-Model yang dikembangkan
+
+Secara kasat mata, dari kedua model tersebut dapat memprediksi data uji dengan baik, akan tetapi kita harus memilih model manakah yang terbaik dengan cara mencari model dengan nilai _error rate_ terkecil.
+
+## Evaluating
+Pada pryek ini, model yang dibuat merupakan kasus regresi dan menggunakan metriks perhitungan _Root Mean Squared Error_ (RMSE) dan _Mean Absolute Error_ (MAE). Berikut adalah rumus dari perhitungan RMSE dan MAE:
+
+**RMSE**
+![1_lqDsPkfXPGen32Uem1PTNg](https://user-images.githubusercontent.com/41296422/137367800-2dc7bd32-f39e-447e-915f-c623a5192a70.png)
+
+Nilai RMSE didapatkan dari perhitungan jumlah setiap nilai prediksi dikurangi nilai asli dipangkat dua lalu dibagikan dengan banyaknya data dan terakhir diakarkan.
+
+**MAE**
+![1_OVlFLnMwHDx08PHzqlBDag](https://user-images.githubusercontent.com/41296422/137367898-3f9c131d-a300-4c70-a9bc-8e7d8d1458ee.gif)
+
+Nilai MAE didapatkan dari perhitungan jumlah setiap nilai asli dikurangi nilai prediksi dipangkat dua lalu dibagikan dengan banyaknya data dan terakhir diakarkan.
+
+Pada tabel di bawah ini adalah hasil dari perhitungan RMSE dan MAE dari kedua model di atas.
+
+||Root Mean Squared Error|Mean Absolute Error|
+|------|----------|-------|
+|Model _Baseline_|0.002242|0.001706|
+|Model yang dikembangkan|0.001476|0.001147|
+
+Dapat disimpulkan bahwa, model yang dikembangkan lebih baik daripada model _baseline_.
