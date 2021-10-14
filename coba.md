@@ -75,3 +75,7 @@ Pada berkas yang diunduh yakni `EURUSD=X.csv` berisi informasi metriks nilai tuk
 7. `Volume`: Representasi dari aktivitas yang berlangsung selama suatu periode trading.
 
 Pada kasus kali ini yang akan diterapkan adalah variabel `Date` dan `Close` karena keduanya bisa memicu signal beli atau signal jual untuk waktu yang akan datang.
+Kemudian terdapat juga visualisasi data untuk kolom `Close` dengan `Date` sebagai indeksnya:
+![newplot (1)](https://user-images.githubusercontent.com/41296422/137333358-6fb353be-5227-4e1e-9895-881e86f51f3b.png)
+
+##Data Preparation
