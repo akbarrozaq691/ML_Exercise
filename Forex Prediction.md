@@ -98,7 +98,7 @@ Berikut adalah tahapan pra-pemrosesan data seperti yang telah dijelaskan pada *s
 
   Pada rumus tersebut, simbol `x` mewakili data yang diinputkan. MinMaxScaler sendiri bekerja dengan cara data asli akan dikurangi dengan data terkecil lalu dibagi dengan pengurungan dari data terbesar dan data terkecil.
 - Penggunaan TimeseriesGenerator
-  Data *time series* harus diubah menjadi struktur sampel dengan komponen *input* dan *output* sebelum dapat digunakan agar sesuai dengan *supervised learning model*. Ini bisa menjadi tantangan jika harus melakukan transformasi ini secara *manual*. TimeseriesGenerator salah satu solusi untuk mengubah data deret waktu *univariate* secara otomatis menjadi sampel, dan siap untuk melatih model *deep learning* [[6]](https://machinelearningmastery.com/how-to-use-the-timeseriesgenerator-for-time-series-forecasting-in-keras/).
+  Data *time series* harus diubah menjadi struktur sampel dengan komponen *input* dan *output* sebelum dapat digunakan agar sesuai dengan *supervised learning model*. Ini bisa menjadi tantangan jika harus melakukan transformasi ini secara *manual*. TimeseriesGenerator salah satu solusi untuk mengubah data deret waktu *univariate* secara otomatis menjadi sampel, dan siap untuk melatih model *machine learning* [[8]](https://machinelearningmastery.com/how-to-use-the-timeseriesgenerator-for-time-series-forecasting-in-keras/).
 
 ## Modelling
 Setelah melakukan pra-pemrosesan data yang baik pada tahap modeling akan dilakukan dua hal, yakni tahap pembuatan model *baseline* dan pembuatan model yang dikembangkan.
