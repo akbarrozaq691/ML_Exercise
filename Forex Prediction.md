@@ -143,10 +143,17 @@ Dapat disimpulkan bahwa, model yang dikembangkan lebih baik daripada model *base
 ## *References*
 
 [[1]](https://ojs.unud.ac.id/index.php/bse/article/view/2195) Alwiyah dan Liyanto, “Analisis Teknikal Untuk Mendapatkan Profit,” Bul. Stud. Ekon., vol. 17, no. 2, hal. 221–228, 2012.
+
 [[2]](https://doi.org/10.3390/a13080186)	M. S. Islam, E. Hossain, A. Rahman, M. S. Hossain, dan K. Andersson, “A Review on Recent Advancements in FOREX Currency Prediction,” Algorithms, vol. 13, no. 8, hal. 186, Jul 2020, https://doi.org/10.3390/a13080186.
+
 [[3]](https://doi.org/10.24176/simet.v6i2.453)	R. H. Kusumodestoni dan S. Suyatno, “PREDIKSI FOREX MENGGUNAKAN MODEL NEURAL NETWORK,” Simetris  J. Tek. Mesin, Elektro dan Ilmu Komput., vol. 6, no. 2, hal. 205, Nov 2015, https://doi.org/10.24176/simet.v6i2.453.
+
 [[4]](https://doi.org/10.1109/ICACCI.2017.8125846)	R. Vinayakumar, K. P. Soman, dan P. Poornachandran, “Long short-term memory based operation log anomaly detection,” in 2017 International Conference on Advances in Computing, Communications and Informatics (ICACCI), Sep 2017, hal. 236–242, https://doi.org/10.1109/ICACCI.2017.8125846.
+
 [[5]](https://ntnuopen.ntnu.no/ntnu-xmlui/bitstream/handle/11250/2559922/18579_FULLTEXT.pdf?sequence=1)	S. Øyen, “Forecasting Multivariate Time Series Data Using Neural Networks,” Nor. Univ. Sci. Technol., no. June, 2018, [Daring]. Tersedia pada: https://ntnuopen.ntnu.no/ntnu-xmlui/bitstream/handle/11250/2559922/18579_FULLTEXT.pdf?sequence=1.
+
 [[6]](https://doi.org/10.1007/978-981-10-2669-0)  H. Zhang, Q. Yan, G. Zhang, dan Z. Jiang, Theory, Methodology, Tools and Applications for Modeling and Simulation of Complex Systems, vol. 643, no. October. Singapore: Springer Singapore, 2016. https://doi.org/10.1007/978-981-10-2669-0.
+
 [[7]](https://doi.org/10.1109/CVPR.2018.00572)	S. Li, W. Li, C. Cook, C. Zhu, dan Y. Gao, “Independently Recurrent Neural Network (IndRNN): Building A Longer and Deeper RNN,” Proc. IEEE Comput. Soc. Conf. Comput. Vis. Pattern Recognit., no. 1, hal. 5457–5466, 2018, https://doi.org/10.1109/CVPR.2018.00572.
+
 [[8]](https://machinelearningmastery.com/how-to-use-the-timeseriesgenerator-for-time-series-forecasting-in-keras/)	J. Brownlee, “How to Use the TimeseriesGenerator for Time Series Forecasting in Keras,” 2018. https://machinelearningmastery.com/how-to-use-the-timeseriesgenerator-for-time-series-forecasting-in-keras/ (diakses Okt 13, 2021).
