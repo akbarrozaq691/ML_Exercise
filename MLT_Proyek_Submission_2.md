@@ -44,13 +44,12 @@ Dataset: [Book Recommendation Dataset](https://www.kaggle.com/arashnic/book-reco
 |Jenis dan Ukuran Berkas  |Zip (107MB)                                                                                               |
 
 Terdapat 3 file yang didownload yaitu: `Books.csv`, `Ratings.csv`, `Users.csv`. Berikut adalah rincian dari ketiga file tersebut:
-- `Books.csv`
+1. `Books.csv`
   Pada file tersebut, berisi informasi metriks data buku dengan jumlah 271.360 data. Terdapat 7 buah data objek dengan rincian sebagai berikut:
-  1. `ISBN`: Blbal
-  2. `Book-Title`: sdfsdf
-  
-- `Ratings.csv`
-- `Users.csv`
+  - `ISBN`: Blbal
+  - `Book-Title`: sdfsdf
+2. `Ratings.csv`
+3. `Users.csv`
 
 
 berisi informasi metriks nilai tukar uang EUR/USD dengan jumlah 4663 data. Terdapat 6 buah data numerik (tipe data float64) dan 1 buah data *date time* (tipe data datetime64). Dataset tersebut memiliki data kosong kecuali pada kolom tanggal. Untuk mengenal variabel apa saja pada dataset tersebut, dapat dilihat pada poin-poin sebagai berikut:
