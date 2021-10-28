@@ -1,9 +1,9 @@
 # Laporan Proyek Machine Learning - Hasri Akbar Awal Rozaq
 
 ## Domain Proyek
-Domain proyek yang dipilih dalam proyek *machine learning* ini adalah mengenai **Sistem Rekomendasi Buku** dengan judul proyek "Penerapan Sistem Rekomendasi *Content-Based Filtering* dan *Collaborative Filtering* untuk Merekomendasikan Buku Bacaan".
+Domain proyek yang dipilih dalam proyek *machine learning* ini adalah mengenai **Sistem Rekomendasi** dengan judul proyek "Penerapan Metode *Content-Based Filtering* dan *Collaborative Filtering* untuk Sistem Rekomendasi Buku Bacaan".
 
-Pengertian
+Sebagai pembaca pasti akan bingung memilih buku mana lagi yang relevan dengan buku sebelumnya yang telah dibaca. Maka daripada itu, saya membuat sebuah sistem untuk merekomendasikan beberapa buku yang berkaitan dengan buku pembaca sebelumnya. Selain itu, saya juga membuat sistem rekomendasi kepada pengguna baru yang ingin membaca buku pertama kali.
 
 ## Business Understanding
 ### Problem Statements
@@ -30,20 +30,18 @@ Solusi yang dilakukan untuk memenuhi tujuan dari proyek ini di antaranya:
   Selain itu, berikut ini adalah kelebihan dan kelemahan algoritma KNN:
   
 ## Data Understanding
-![Capture](https://user-images.githubusercontent.com/41296422/137277185-d5e6a42d-47e9-4468-bacf-90e2a0c2399e.JPG)
+![book](https://user-images.githubusercontent.com/41296422/139196256-e84cc6f6-8f6f-4c98-8dfe-011a8619540a.JPG)
 
 Informasi Dataset:
 
-Dataset: [EURUSD=X](https://finance.yahoo.com/quote/EURUSD%3DX/history?period1=1070236800&period2=1634083200&interval=1d&filter=history&frequency=1d&includeAdjustedClose=true)
+Dataset: [Book Recommendation Dataset](https://www.kaggle.com/arashnic/book-recommendation-dataset)
 
-|Jenis                    |Keterangan                                                                                              |
-| ----------------------- |  ----------------------------------------------------------------------------------------------------- |
-|Sumber                   |[yahoo! Finance: EUR/USD (EURUSD=X)](https://finance.yahoo.com/quote/EURUSD=X?p=EURUSD=X&.tsrc=fin-srch)|
-|Lisensi                  |CC0: Public Domain                                                                                      |
-|Kategori                 |Finance (Keuangan)                                                                                      |
-|Jenis dan Ukuran Berkas  |CSV (263K)                                                                                              |
-|Time Frame yang Digunakan|Daily                                                                                                   |
-|Range Waktu              |1 Desember 2003 - 13 Oktober 2021                                                                       |
+|Jenis                    |Keterangan                                                                                                |
+| ----------------------- |  -----------------------------------------------------------------------------------------------------   |
+|Sumber                   |[Kaggle Dataset: Book Recommendation Dataset](https://www.kaggle.com/arashnic/book-recommendation-dataset)|
+|Lisensi                  |CC0: Public Domain                                                                                        |
+|Kategori                 |Literature, Culture, and Humanities                                                                       |
+|Jenis dan Ukuran Berkas  |Zip (107MB)                                                                                               |
 
 Pada berkas yang diunduh yakni `EURUSD=X.csv` berisi informasi metriks nilai tukar uang EUR/USD dengan jumlah 4663 data. Terdapat 6 buah data numerik (tipe data float64) dan 1 buah data *date time* (tipe data datetime64). Dataset tersebut memiliki data kosong kecuali pada kolom tanggal. Untuk mengenal variabel apa saja pada dataset tersebut, dapat dilihat pada poin-poin sebagai berikut:
 1. `Date`: Tanggal dimana menunjukkan waktu terjadinya pembukaan dan penutup harga, pada dataset kali ini, data tersebut berisi waktu harian dan sangat penting untuk dianalisis apakah harga naik / turun dalam satu hari terakhir
