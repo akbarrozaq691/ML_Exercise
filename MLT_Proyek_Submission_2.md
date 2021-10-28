@@ -183,3 +183,24 @@ Dapat disimpulkan bahwa, algoritma *weighted-rating* dan K-NN dapat digunakan un
 
 ## Referensi
 
+[1]	Tawakkal Saleh, “Pentingnya Membaca dan Menggunakan Perpustakaan dalam Mengubah Kehidupan Manusia,” Jupiter, vol. XII, no. 01, hal. 24–28, 2014.
+
+[2]	E. Saepudin, “Tingkat Budaya Membaca Masyarakat,” J. Kaji. Inf. Perpust., vol. 3, no. 2, hal. 271–282, 2015, [Daring]. Tersedia pada: http://garuda.ristekbrin.go.id/documents/detail/477108.
+
+[3]	L. Tahmidaten dan W. Krismanto, “Permasalahan Budaya Membaca di Indonesia (Studi Pustaka Tentang Problematika & Solusinya),” Sch. J. Pendidik. dan Kebud., vol. 10, no. 1, hal. 22–33, 2020, doi: 10.24246/j.js.2020.v10.i1.p22-33.
+
+[4]	I. Irzawati, M. Yustien, dan A. R. Hasibuan, “Membangun Budaya Gemar Membaca untuk Menjawab Tantangan Literasi di Era Teknologi,” J. Abdimas Musi …, vol. 3, no. 1, hal. 9–15, 2019, [Daring]. Tersedia pada: http://eprints.ukmc.ac.id/3028/.
+
+[5]	A. J. T, D. Yanosma, dan K. Anggriani, “Implementasi Metode K-Nearest Neighbor (Knn) Dan Simple Additive Weighting (Saw) Dalam Pengambilan Keputusan Seleksi Penerimaan Anggota Paskibraka,” Pseudocode, vol. 3, no. 2, hal. 98–112, 2017, doi: 10.33369/pseudocode.3.2.98-112.
+
+[6]	M. Kurniawati, Y. Oslan, dan U. Proboyekti, “Implementasi Weight Scoring System Dalam,” J. EKSIS, vol. 2, no. 2, 2009, [Daring]. Tersedia pada: https://ti.ukdw.ac.id/ojs/index.php/eksis/article/view/389.
+
+[7]	R. Roni, S. Sumijan, dan J. Santony, “Metode Weighted Product dalam Pemilihan Penerima Beasiswa Bagi Peserta Didik,” J. RESTI (Rekayasa Sist. dan Teknol. Informasi), vol. 3, no. 1, hal. 87–93, Apr 2019, doi: 10.29207/resti.v3i1.834.
+
+[8]	Y. R. Latif dan J. Susilo, “Pengembangan Aplikasi Pemilihan Smartphone Android Menggunakan Metode Weighted Product Berbasis Android,” J. Inform. dan Bisnis, vol. 53, no. 9, hal. 59–65, 2019.
+
+[9]	W. Yustanti, “Algoritma K-Nearest Neighbour untuk Memprediksi Harga Jual Tanah,” J. Mat. Stat. dan komputasi, vol. 9, no. 1, hal. 57–68, 2012.
+
+[10]	Z. Lubis, P. Sihombing, dan H. Mawengkang, “Optimization of K Value at the K-NN algorithm in clustering using the expectation maximization algorithm,” IOP Conf. Ser. Mater. Sci. Eng., vol. 725, hal. 012133, Jan 2020, doi: 10.1088/1757-899X/725/1/012133.
+
+[11]	S. Mutrofin, A. Kurniawardhani, A. Izzah, dan M. Masrur, “Optimasi Teknik Klasifikasi Modified k Nearest Neighbor Menggunakan Algoritma Genetika Metode Penelitian,” J. Gamma, vol. 10, no. 1, hal. 1–5, 2015, [Daring]. Tersedia pada: https://docplayer.info/70750891-Optimasi-teknik-klasifikasi-modified-k-nearest-neighbor-menggunakan-algoritma-genetika.html.
