@@ -6,7 +6,7 @@ Domain proyek yang dipilih dalam proyek *machine learning* ini adalah mengenai *
 Buku merupakan jendela ilmu dimana sangat penting bagi kehidupan manusia [[1]](https://journal.unhas.ac.id/index.php/jupiter/article/view/1672). Dengan terbiasa membaca maka 
 seseorang akan memiliki cakrawala pengetahuan yang luas, kreativitas terbuka, imajinasi tinggi, pemikiran yang maju dan berkembang serta menjadi cikal bakal pemberdayaan manusia yang cerdas dan berintelektual. Tingkat kesadaran membaca buku terutama di Indonesia itu sangat rendah [[2]](http://jurnal.unpad.ac.id/jkip/article/download/10003/4723). Rata-rata nasional distribusi literasi pada kemampuan membaca pelajar di Indonesia adalah 46,83% berada pada kategori Kurang, hanya 6,06% berada pada kategori Baik, dan 47,11 berada pada kategori Cukup [[3]](https://core.ac.uk/download/pdf/287170379.pdf). Padahal, di negara lain membaca buku sudah menjadi budaya sehari-hari dimana kegiatan tersebut dimanfaatkan ketika waktu mereka kosong. Dengan adanya teknologi saat ini, diharapkan mampu meningkatkan budaya membaca dari setiap kalangan. Penggunaan media digital sudah sangat melekat setiap harinya. Hasil penelitian yang telah dilakukan mengungkap fakta bahwa ada perbedaan signifikan setelah melakukan kegiatan membaca dengan media digital [[4]](http://eprints.ukmc.ac.id/3028/4/Artikel%20%28Ira%20Irzawati%29.pdf).
 
-Penggunaan media baca selalu berperan penting di dalamnya. Pengguna aktif akan selalu membaca buku digital secara berkala. Akan tetapi, sebagai pembaca pasti akan bingung memilih buku mana lagi yang relevan dengan buku sebelumnya yang telah dibaca. Dari permasalahan tersebut, saya akan membuat sebuah sistem untuk merekomendasikan beberapa buku yang berkaitan dengan buku pembaca sebelumnya dengan metode *collaborative filtering*. Selain itu, saya juga membuat sistem rekomendasi kepada pengguna baru yang ingin membaca buku pertama kali dengan metode *content-based filtering*.
+Penggunaan media baca selalu berperan penting di dalamnya. Pengguna aktif akan selalu membaca buku digital secara berkala. Akan tetapi, sebagai pembaca pasti akan bingung memilih buku mana lagi yang relevan dengan buku sebelumnya yang telah dibaca. Dari permasalahan tersebut, saya akan membuat sebuah sistem untuk merekomendasikan beberapa buku yang berkaitan dengan buku pembaca sebelumnya dengan metode *collaborative filtering*. Selain itu, saya juga membuat sistem rekomendasi kepada pengguna baru yang ingin membaca buku pertama kali dengan metode *content-based filtering* dimana nantinya akan diterapkan pada salah satu media digital.
 
 ## Business Understanding
 ### Problem Statements
@@ -28,9 +28,33 @@ Solusi yang dilakukan untuk memenuhi tujuan dari proyek ini di antaranya:
   
   Poin pra-pemrosesan data akan dijelaskan secara rinci pada bagian `Data Preparation`.
   
-- Untuk pembuatan sistem rekomendasi, saya memilih dua metode yaitu *content-based filtering* menggunakan algoritma *weighted-rating* dan *collaborative filtering* menggunakan algoritma K-NN (*K-Nearest Neighbor*). Pemilihan algoritma tersebut karena 
+- Untuk pembuatan sistem rekomendasi, saya memilih dua metode yaitu *content-based filtering* menggunakan algoritma *weighted-rating* dan *collaborative filtering* menggunakan algoritma K-NN (*K-Nearest Neighbor*). Pemilihan kedua algoritma tersebut karena dapat mengatasi masalah klasifikasi terutama untuk sistem rekomendasi buku [[5]](https://media.neliti.com/media/publications/127887-ID-implementasi-metode-k-nearest-neighbor-k.pdf).
 
-  Selain itu, berikut ini adalah kelebihan dan kelemahan algoritma KNN:
+  - *Weighted-Rating*
+    
+    *Weighted-Rating* atau biasa disebut dengan *Weighted Scoring System* merupakan  sistem penilaian yang didasarkan pada kriteria-kriteria penilaian, *weight*, *rating*, serta *score*-nya. Sistem ini biasanya digunakan oleh para pembuat keputusan yang dihadapkan pada sejumlah kriteria yang telah ditetapkan sebagai bahan pertimbangan dalam pengambilan keputusan [[6]](https://media.neliti.com/media/publications/79738-ID-implementasi-weight-scoring-system-dalam.pdf). Rumus dari algoritma tersebut dapat diartikan sebagai berikut sebagai berikut[[7]](https://jurnal.iaii.or.id/index.php/RESTI/article/view/834):
+    
+    <img src="https://user-images.githubusercontent.com/41296422/139244529-2aec8fe4-e4ba-4655-8980-cd15e54535b2.JPG" width="50%" height="50%">
+    
+    Dimana dapat diartikan:
+    - `v` adalah jumlah voting untuk sebuah buku
+    - `m` adalah suara minimum yang diperlukan untuk dicantumkan dalam bagan
+    - `R` adalah nilai rata-rata dari rating sebuah buku
+    - `C` adalah suara rata-rata di seluruh laporan pada sebuah data
+    
+    Dengan metode ini, dapat memberikan hasil rekomendasi buku dengan cara mengurutkan mulai dari bobot tertinggi hingga terendah. Selain itu, berikut ini adalah kelebihan dan kelemahan dari algoritma ini [[8]](https://jurnal.kwikkiangie.ac.id/index.php/JIB/article/view/711/463):
+    - Kelebihan
+      - Konsep yang sederhana untuk melakukan pembobotan
+      - Mempercepat proses perhitungan kriteria
+      - Dapat digunakan untuk pengambilan *single* dan keputusan *multidimensional*
+    - Kelemahan
+      - Metode ini hanya metode matematis tanpa ada pengujian secara statistik
+    
+  - K-NN (*K-Nearest Neighbor*)
+  
+    K-NN singkatan dari *K-Nearest Neighbor* dimana merupakan blakdjks
+  
+  Selain itu, berikut ini adalah kelebihan dan kelemahan algoritma K-NN:
   
 ## Data Understanding
 ![book](https://user-images.githubusercontent.com/41296422/139196256-e84cc6f6-8f6f-4c98-8dfe-011a8619540a.JPG)
