@@ -140,7 +140,7 @@ Berikut adalah tahapan pra-pemrosesan data seperti yang telah dijelaskan pada *s
     
 - Pembersihan data yang memiliki rating 0
 
-  Proses ini dilakukan berfungsi untuk mengoptimalkan sistem rekomendasi buku dimana dapat dikatakan bahwa buku yang belum diberi rating maka bisa jadi belum sesuai dengan standar rekomendasi. Rating yang saya gunakan untuk sistem ini adalah dari 1 - 10. (cari alasannya)
+  Proses ini dilakukan berfungsi untuk mengoptimalkan sistem rekomendasi buku dimana dapat dikatakan bahwa buku yang belum diberi rating maka bisa jadi belum sesuai dengan standar rekomendasi. Rating yang saya gunakan untuk sistem ini adalah dari 1 - 10.
 
 ## Modelling
 Setelah melakukan pra-pemrosesan data, selanjutnya adalah membuat sistem rekomendasi buku dengan metode *content-based filtering* menggunakan algoritma *weighted-rating* dan *collaborative filtering* menggunakan algoritma K-NN (*K-Nearest Neighbor*).
