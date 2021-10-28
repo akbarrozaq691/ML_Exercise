@@ -32,7 +32,7 @@ Solusi yang dilakukan untuk memenuhi tujuan dari proyek ini di antaranya:
 
   - *Weighted-Rating*
     
-    *Weighted-Rating* atau biasa disebut dengan *Weighted Scoring System* merupakan  sistem penilaian yang didasarkan pada kriteria-kriteria penilaian, *weight*, *rating*, serta *score*-nya. Sistem ini biasanya digunakan oleh para pembuat keputusan yang dihadapkan pada sejumlah kriteria yang telah ditetapkan sebagai bahan pertimbangan dalam pengambilan keputusan [[6]](https://media.neliti.com/media/publications/79738-ID-implementasi-weight-scoring-system-dalam.pdf). Rumus dari algoritma tersebut dapat diartikan sebagai berikut sebagai berikut[[7]](https://jurnal.iaii.or.id/index.php/RESTI/article/view/834):
+    *Weighted-Rating* atau biasa disebut dengan *Weighted Scoring System* merupakan sistem penilaian yang didasarkan pada kriteria-kriteria penilaian, *weight*, *rating*, serta *score*-nya. Sistem ini biasanya digunakan oleh para pembuat keputusan yang dihadapkan pada sejumlah kriteria yang telah ditetapkan sebagai bahan pertimbangan dalam pengambilan keputusan [[6]](https://media.neliti.com/media/publications/79738-ID-implementasi-weight-scoring-system-dalam.pdf). Sehingga, cocok digunakan untuk kasus *content-based filtering* ini. Rumus dari algoritma tersebut dapat diartikan sebagai berikut sebagai berikut [[7]](https://jurnal.iaii.or.id/index.php/RESTI/article/view/834):
     
     <img src="https://user-images.githubusercontent.com/41296422/139244529-2aec8fe4-e4ba-4655-8980-cd15e54535b2.JPG" width="50%" height="50%">
     
@@ -52,7 +52,7 @@ Solusi yang dilakukan untuk memenuhi tujuan dari proyek ini di antaranya:
     
   - K-NN (*K-Nearest Neighbor*)
   
-    K-NN singkatan dari *K-Nearest Neighbor* dimana merupakan blakdjks
+    K-NN singkatan dari *K-Nearest Neighbor* dimana merupakan sebuah metode untuk melakukan klasifikasi terhadap objek berdasarkan data pembelajaran yang jaraknya paling dekat dengan objek tersebut [[9]](https://journal.unhas.ac.id/index.php/jmsk/article/download/3399/1936). Sehingga sangat cocok untuk metode *collaborative filtering* saat ini. 
   
   Selain itu, berikut ini adalah kelebihan dan kelemahan algoritma K-NN:
   
