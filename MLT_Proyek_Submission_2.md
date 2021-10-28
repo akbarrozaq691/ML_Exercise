@@ -43,7 +43,17 @@ Dataset: [Book Recommendation Dataset](https://www.kaggle.com/arashnic/book-reco
 |Kategori                 |Literature, Culture, and Humanities                                                                       |
 |Jenis dan Ukuran Berkas  |Zip (107MB)                                                                                               |
 
-Terdapat 3 file yang didownload yaitu: `Books.csv`, `Ratings.csv`, `Users.csv`. berisi informasi metriks nilai tukar uang EUR/USD dengan jumlah 4663 data. Terdapat 6 buah data numerik (tipe data float64) dan 1 buah data *date time* (tipe data datetime64). Dataset tersebut memiliki data kosong kecuali pada kolom tanggal. Untuk mengenal variabel apa saja pada dataset tersebut, dapat dilihat pada poin-poin sebagai berikut:
+Terdapat 3 file yang didownload yaitu: `Books.csv`, `Ratings.csv`, `Users.csv`. Berikut adalah rincian dari ketiga file tersebut:
+- `Books.csv`
+  Pada file tersebut, berisi informasi metriks data buku dengan jumlah 271.360 data. Terdapat 7 buah data objek dengan rincian sebagai berikut:
+  1. `ISBN`: Blbal
+  2. `Book-Title`: sdfsdf
+  
+- `Ratings.csv`
+- `Users.csv`
+
+
+berisi informasi metriks nilai tukar uang EUR/USD dengan jumlah 4663 data. Terdapat 6 buah data numerik (tipe data float64) dan 1 buah data *date time* (tipe data datetime64). Dataset tersebut memiliki data kosong kecuali pada kolom tanggal. Untuk mengenal variabel apa saja pada dataset tersebut, dapat dilihat pada poin-poin sebagai berikut:
 1. `Date`: Tanggal dimana menunjukkan waktu terjadinya pembukaan dan penutup harga, pada dataset kali ini, data tersebut berisi waktu harian dan sangat penting untuk dianalisis apakah harga naik / turun dalam satu hari terakhir
 2. `Open`: Harga pertama kali transaksi dilakukan pada hari itu. Harga *open* tersebut mencerminkan semua informasi pasar yang ada, yang terjadi atau muncul diantara harga penutupan sehari sebelumnya dan ketika saat-saat terakhir pemodal boleh memasukkan order ke mesin bursa.
 3. `High`: Kisaran harga pergerakan harian dari saham tersebut dimana pemodal memiliki keberanian atau rasionalitas untuk melakukan posisi beli.
