@@ -4,7 +4,7 @@
 Domain proyek yang dipilih dalam proyek *machine learning* ini adalah mengenai **Sistem Rekomendasi** dengan judul proyek "Penerapan Metode *Content-Based Filtering* dan *Collaborative Filtering* untuk Sistem Rekomendasi Buku Bacaan".
 
 Buku merupakan jendela ilmu dimana sangat penting bagi kehidupan manusia [[1]](https://journal.unhas.ac.id/index.php/jupiter/article/view/1672). Dengan terbiasa membaca maka 
-seseorang akan memiliki cakrawala pengetahuan yang luas, kreativitas terbuka, imajinasi tinggi, pemikiran yang maju dan berkembang serta menjadi cikal bakal pemberdayaan manusia yang cerdas dan berintelektual. Tingkat kesadaran membaca buku terutama di Indonesia itu sangat rendah [[2]](http://jurnal.unpad.ac.id/jkip/article/download/10003/4723). Rata-rata nasional distribusi literasi pada kemampuan membaca pelajar di Indonesia adalah 46,83% berada pada kategori Kurang, hanya 6,06% berada pada kategori Baik, dan 47,11 berada pada kategori Cukup [[3]](https://core.ac.uk/download/pdf/287170379.pdf). Padahal, di negara lain membaca buku sudah menjadi budaya sehari-hari dimana kegiatan tersebut dimanfaatkan ketika waktu mereka kosong. Dengan adanya teknologi saat ini, diharapkan mampu meningkatkan budaya membaca dari setiap kalangan. Penggunaan media digital sudah sangat melekat setiap harinya. Hasil penelitian yang telah dilakukan mengungkap fakta bahwa ada perbedaan signifikan setelah melakukan kegiatan membaca dengan media digital [[4]](http://eprints.ukmc.ac.id/3028/4/Artikel%20%28Ira%20Irzawati%29.pdf).
+seseorang akan memiliki cakrawala pengetahuan yang luas, kreativitas terbuka, imajinasi tinggi, pemikiran yang maju dan berkembang serta menjadi cikal bakal pemberdayaan manusia yang cerdas dan berintelektual. Tingkat kesadaran membaca buku terutama di Indonesia itu sangat rendah [[2]](http://garuda.ristekbrin.go.id/documents/detail/477108). Rata-rata nasional distribusi literasi pada kemampuan membaca pelajar di Indonesia adalah 46,83% berada pada kategori Kurang, hanya 6,06% berada pada kategori Baik, dan 47,11 berada pada kategori Cukup [[3]](https://doi.org/10.24246/j.js.2020.v10.i1.p22-33). Padahal, di negara lain membaca buku sudah menjadi budaya sehari-hari dimana kegiatan tersebut dimanfaatkan ketika waktu mereka kosong. Dengan adanya teknologi saat ini, diharapkan mampu meningkatkan budaya membaca dari setiap kalangan. Penggunaan media digital sudah sangat melekat setiap harinya. Hasil penelitian yang telah dilakukan mengungkap fakta bahwa ada perbedaan signifikan setelah melakukan kegiatan membaca dengan media digital [[4]](http://eprints.ukmc.ac.id/3028/).
 
 Penggunaan media baca selalu berperan penting di dalamnya. Pengguna aktif akan selalu membaca buku digital secara berkala. Akan tetapi, sebagai pembaca pasti akan bingung memilih buku mana lagi yang relevan dengan buku sebelumnya yang telah dibaca. Dari permasalahan tersebut, saya akan membuat sebuah sistem untuk merekomendasikan beberapa buku yang berkaitan dengan buku pembaca sebelumnya dengan metode *collaborative filtering*. Selain itu, saya juga membuat sistem rekomendasi kepada pengguna baru yang ingin membaca buku pertama kali dengan metode *content-based filtering* yang nantinya akan diterapkan pada salah satu media digital.
 
@@ -28,11 +28,11 @@ Solusi yang dilakukan untuk memenuhi tujuan dari proyek ini di antaranya:
   
   Poin pra-pemrosesan data akan dijelaskan secara rinci pada bagian `Data Preparation`.
   
-- Untuk pembuatan sistem rekomendasi, saya memilih dua metode yaitu *content-based filtering* menggunakan algoritma *weighted-rating* dan *collaborative filtering* menggunakan algoritma K-NN (*K-Nearest Neighbor*). Pemilihan kedua algoritma tersebut karena dapat mengatasi masalah klasifikasi terutama untuk sistem rekomendasi buku [[5]](https://media.neliti.com/media/publications/127887-ID-implementasi-metode-k-nearest-neighbor-k.pdf).
+- Untuk pembuatan sistem rekomendasi, saya memilih dua metode yaitu *content-based filtering* menggunakan algoritma *weighted-rating* dan *collaborative filtering* menggunakan algoritma K-NN (*K-Nearest Neighbor*). Pemilihan kedua algoritma tersebut karena dapat mengatasi masalah klasifikasi terutama untuk sistem rekomendasi buku [[5]](https://doi.org/10.33369/pseudocode.3.2.98-112).
 
   - *Weighted-Rating*
     
-    *Weighted-Rating* atau biasa disebut dengan *Weighted Scoring System* merupakan sistem penilaian yang didasarkan pada kriteria-kriteria penilaian, *weight*, *rating*, serta *score*-nya. Sistem ini biasanya digunakan oleh para pembuat keputusan yang dihadapkan pada sejumlah kriteria yang telah ditetapkan sebagai bahan pertimbangan dalam pengambilan keputusan [[6]](https://ti.ukdw.ac.id/ojs/index.php/eksis/article/view/389/166). Sehingga, cocok digunakan untuk kasus *content-based filtering* ini. Rumus dari algoritma tersebut dapat diartikan sebagai berikut sebagai berikut [[7]](https://jurnal.iaii.or.id/index.php/RESTI/article/view/834):
+    *Weighted-Rating* atau biasa disebut dengan *Weighted Scoring System* merupakan sistem penilaian yang didasarkan pada kriteria-kriteria penilaian, *weight*, *rating*, serta *score*-nya. Sistem ini biasanya digunakan oleh para pembuat keputusan yang dihadapkan pada sejumlah kriteria yang telah ditetapkan sebagai bahan pertimbangan dalam pengambilan keputusan [[6]](https://ti.ukdw.ac.id/ojs/index.php/eksis/article/view/389). Sehingga, cocok digunakan untuk kasus *content-based filtering* ini. Rumus dari algoritma tersebut dapat diartikan sebagai berikut sebagai berikut [[7]](https://doi.org/10.29207/resti.v3i1.834):
     
     <img src="https://user-images.githubusercontent.com/41296422/139244529-2aec8fe4-e4ba-4655-8980-cd15e54535b2.JPG" width="50%" height="50%">
     
@@ -52,7 +52,7 @@ Solusi yang dilakukan untuk memenuhi tujuan dari proyek ini di antaranya:
     
   - K-NN (*K-Nearest Neighbor*)
   
-    K-NN singkatan dari *K-Nearest Neighbor* dimana merupakan sebuah metode untuk melakukan klasifikasi terhadap objek berdasarkan data pembelajaran yang jaraknya paling dekat dengan objek tersebut [[9]](https://journal.unhas.ac.id/index.php/jmsk/article/download/3399/1936). Sehingga sangat cocok untuk metode *collaborative filtering* saat ini. Berikut adalah cara kerja algoritma ini (diterjemahkan dari [[10]](https://www.researchgate.net/publication/338718633_Optimization_of_K_Value_at_the_K-NN_algorithm_in_clustering_using_the_expectation_maximization_algorithm)):
+    K-NN singkatan dari *K-Nearest Neighbor* dimana merupakan sebuah metode untuk melakukan klasifikasi terhadap objek berdasarkan data pembelajaran yang jaraknya paling dekat dengan objek tersebut [[9]](https://journal.unhas.ac.id/index.php/jmsk/article/download/3399/1936). Sehingga sangat cocok untuk metode *collaborative filtering* saat ini. Berikut adalah cara kerja algoritma ini (diterjemahkan dari [[10]](https://doi.org/10.1088/1757-899X/725/1/012133):
     - Memasukkan data
     - Inisialisasi nilai K (banyaknya tetangga / kelompok)
     - Kalkukasi jarak dengan euclidian dengan rumus sebagai berikut:
@@ -183,24 +183,24 @@ Dapat disimpulkan bahwa, algoritma *weighted-rating* dan K-NN dapat digunakan un
 
 ## Referensi
 
-[1]	Tawakkal Saleh, “Pentingnya Membaca dan Menggunakan Perpustakaan dalam Mengubah Kehidupan Manusia,” Jupiter, vol. XII, no. 01, hal. 24–28, 2014.
+[[1]](https://journal.unhas.ac.id/index.php/jupiter/article/view/1672)  Tawakkal Saleh, “Pentingnya Membaca dan Menggunakan Perpustakaan dalam Mengubah Kehidupan Manusia,” Jupiter, vol. XII, no. 01, hal. 24–28, 2014.
 
-[2]	E. Saepudin, “Tingkat Budaya Membaca Masyarakat,” J. Kaji. Inf. Perpust., vol. 3, no. 2, hal. 271–282, 2015, [Daring]. Tersedia pada: http://garuda.ristekbrin.go.id/documents/detail/477108.
+[[2]](http://garuda.ristekbrin.go.id/documents/detail/477108)	E. Saepudin, “Tingkat Budaya Membaca Masyarakat,” J. Kaji. Inf. Perpust., vol. 3, no. 2, hal. 271–282, 2015, [Daring]. Tersedia pada: http://garuda.ristekbrin.go.id/documents/detail/477108.
 
-[3]	L. Tahmidaten dan W. Krismanto, “Permasalahan Budaya Membaca di Indonesia (Studi Pustaka Tentang Problematika & Solusinya),” Sch. J. Pendidik. dan Kebud., vol. 10, no. 1, hal. 22–33, 2020, doi: 10.24246/j.js.2020.v10.i1.p22-33.
+[[3]](https://doi.org/10.24246/j.js.2020.v10.i1.p22-33)	L. Tahmidaten dan W. Krismanto, “Permasalahan Budaya Membaca di Indonesia (Studi Pustaka Tentang Problematika & Solusinya),” Sch. J. Pendidik. dan Kebud., vol. 10, no. 1, hal. 22–33, 2020, doi: 10.24246/j.js.2020.v10.i1.p22-33.
 
-[4]	I. Irzawati, M. Yustien, dan A. R. Hasibuan, “Membangun Budaya Gemar Membaca untuk Menjawab Tantangan Literasi di Era Teknologi,” J. Abdimas Musi …, vol. 3, no. 1, hal. 9–15, 2019, [Daring]. Tersedia pada: http://eprints.ukmc.ac.id/3028/.
+[[4]](http://eprints.ukmc.ac.id/3028/)	I. Irzawati, M. Yustien, dan A. R. Hasibuan, “Membangun Budaya Gemar Membaca untuk Menjawab Tantangan Literasi di Era Teknologi,” J. Abdimas Musi …, vol. 3, no. 1, hal. 9–15, 2019, [Daring]. Tersedia pada: http://eprints.ukmc.ac.id/3028/.
 
-[5]	A. J. T, D. Yanosma, dan K. Anggriani, “Implementasi Metode K-Nearest Neighbor (Knn) Dan Simple Additive Weighting (Saw) Dalam Pengambilan Keputusan Seleksi Penerimaan Anggota Paskibraka,” Pseudocode, vol. 3, no. 2, hal. 98–112, 2017, doi: 10.33369/pseudocode.3.2.98-112.
+[[5]](https://doi.org/10.33369/pseudocode.3.2.98-112)	A. J. T, D. Yanosma, dan K. Anggriani, “Implementasi Metode K-Nearest Neighbor (Knn) Dan Simple Additive Weighting (Saw) Dalam Pengambilan Keputusan Seleksi Penerimaan Anggota Paskibraka,” Pseudocode, vol. 3, no. 2, hal. 98–112, 2017, doi: 10.33369/pseudocode.3.2.98-112.
 
-[6]	M. Kurniawati, Y. Oslan, dan U. Proboyekti, “Implementasi Weight Scoring System Dalam,” J. EKSIS, vol. 2, no. 2, 2009, [Daring]. Tersedia pada: https://ti.ukdw.ac.id/ojs/index.php/eksis/article/view/389.
+[[6]](https://ti.ukdw.ac.id/ojs/index.php/eksis/article/view/389)	M. Kurniawati, Y. Oslan, dan U. Proboyekti, “Implementasi Weight Scoring System Dalam,” J. EKSIS, vol. 2, no. 2, 2009, [Daring]. Tersedia pada: https://ti.ukdw.ac.id/ojs/index.php/eksis/article/view/389.
 
-[7]	R. Roni, S. Sumijan, dan J. Santony, “Metode Weighted Product dalam Pemilihan Penerima Beasiswa Bagi Peserta Didik,” J. RESTI (Rekayasa Sist. dan Teknol. Informasi), vol. 3, no. 1, hal. 87–93, Apr 2019, doi: 10.29207/resti.v3i1.834.
+[[7]](https://doi.org/10.29207/resti.v3i1.834)	R. Roni, S. Sumijan, dan J. Santony, “Metode Weighted Product dalam Pemilihan Penerima Beasiswa Bagi Peserta Didik,” J. RESTI (Rekayasa Sist. dan Teknol. Informasi), vol. 3, no. 1, hal. 87–93, Apr 2019, doi: 10.29207/resti.v3i1.834.
 
-[8]	Y. R. Latif dan J. Susilo, “Pengembangan Aplikasi Pemilihan Smartphone Android Menggunakan Metode Weighted Product Berbasis Android,” J. Inform. dan Bisnis, vol. 53, no. 9, hal. 59–65, 2019.
+[[8]](https://jurnal.kwikkiangie.ac.id/index.php/JIB/article/view/711/463)	Y. R. Latif dan J. Susilo, “Pengembangan Aplikasi Pemilihan Smartphone Android Menggunakan Metode Weighted Product Berbasis Android,” J. Inform. dan Bisnis, vol. 53, no. 9, hal. 59–65, 2019.
 
-[9]	W. Yustanti, “Algoritma K-Nearest Neighbour untuk Memprediksi Harga Jual Tanah,” J. Mat. Stat. dan komputasi, vol. 9, no. 1, hal. 57–68, 2012.
+[[9]](https://journal.unhas.ac.id/index.php/jmsk/article/download/3399/1936)	W. Yustanti, “Algoritma K-Nearest Neighbour untuk Memprediksi Harga Jual Tanah,” J. Mat. Stat. dan komputasi, vol. 9, no. 1, hal. 57–68, 2012.
 
-[10]	Z. Lubis, P. Sihombing, dan H. Mawengkang, “Optimization of K Value at the K-NN algorithm in clustering using the expectation maximization algorithm,” IOP Conf. Ser. Mater. Sci. Eng., vol. 725, hal. 012133, Jan 2020, doi: 10.1088/1757-899X/725/1/012133.
+[[10]](https://doi.org/10.1088/1757-899X/725/1/012133)	Z. Lubis, P. Sihombing, dan H. Mawengkang, “Optimization of K Value at the K-NN algorithm in clustering using the expectation maximization algorithm,” IOP Conf. Ser. Mater. Sci. Eng., vol. 725, hal. 012133, Jan 2020, doi: 10.1088/1757-899X/725/1/012133.
 
-[11]	S. Mutrofin, A. Kurniawardhani, A. Izzah, dan M. Masrur, “Optimasi Teknik Klasifikasi Modified k Nearest Neighbor Menggunakan Algoritma Genetika Metode Penelitian,” J. Gamma, vol. 10, no. 1, hal. 1–5, 2015, [Daring]. Tersedia pada: https://docplayer.info/70750891-Optimasi-teknik-klasifikasi-modified-k-nearest-neighbor-menggunakan-algoritma-genetika.html.
+[[11]](https://www.researchgate.net/publication/291457761_Optimasi_Teknik_Klasifikasi_Modified_k_Nearest_Neighbor_Menggunakan_Algoritma_Genetika)	S. Mutrofin, A. Kurniawardhani, A. Izzah, dan M. Masrur, “Optimasi Teknik Klasifikasi Modified k Nearest Neighbor Menggunakan Algoritma Genetika Metode Penelitian,” J. Gamma, vol. 10, no. 1, hal. 1–5, 2015, [Daring]. Tersedia pada: https://docplayer.info/70750891-Optimasi-teknik-klasifikasi-modified-k-nearest-neighbor-menggunakan-algoritma-genetika.html.
