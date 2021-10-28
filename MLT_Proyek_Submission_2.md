@@ -21,11 +21,11 @@ Solusi yang dilakukan untuk memenuhi tujuan dari proyek ini di antaranya:
 - Untuk pra-pemrosesan data dapat dilakukan beberapa teknik, antara lain:
   - Pembersihan data yang unik
   - Pembersihan data yang *missing value*
-  - Pembersihan data yang memiliki nilai *rating* 0
+  - Pembersihan data yang memiliki nilai *rating* adalah 0
   
   Poin pra-pemrosesan data akan dijelaskan secara rinci pada bagian `Data Preparation`.
   
-- Untuk pembuatan sistem rekomendasi, saya memilih dua metode yaitu *content-based filtering* menggunakan algoritma *weighted-rating* dan *collaborative filtering* menggunakan algoritma K-NN (K-Nearest Neighbor) 
+- Untuk pembuatan sistem rekomendasi, saya memilih dua metode yaitu *content-based filtering* menggunakan algoritma *weighted-rating* dan *collaborative filtering* menggunakan algoritma K-NN (K-Nearest Neighbor). 
 
   Selain itu, berikut ini adalah kelebihan dan kelemahan algoritma KNN:
   
