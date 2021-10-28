@@ -3,8 +3,9 @@
 ## Domain Proyek
 Domain proyek yang dipilih dalam proyek *machine learning* ini adalah mengenai **Sistem Rekomendasi** dengan judul proyek "Penerapan Metode *Content-Based Filtering* dan *Collaborative Filtering* untuk Sistem Rekomendasi Buku Bacaan".
 
-Buku merupakan balbal
-Sebagai pembaca pasti akan bingung memilih buku mana lagi yang relevan dengan buku sebelumnya yang telah dibaca. Maka daripada itu, saya membuat sebuah sistem untuk merekomendasikan beberapa buku yang berkaitan dengan buku pembaca sebelumnya. Selain itu, saya juga membuat sistem rekomendasi kepada pengguna baru yang ingin membaca buku pertama kali.
+Buku merupakan balbal.
+
+Sebagai pembaca pasti akan bingung memilih buku mana lagi yang relevan dengan buku sebelumnya yang telah dibaca. Dari permasalahan tersebut, saya akan membuat sebuah sistem untuk merekomendasikan beberapa buku yang berkaitan dengan buku pembaca sebelumnya dengan metode *collaborative filtering*. Selain itu, saya juga membuat sistem rekomendasi kepada pengguna baru yang ingin membaca buku pertama kali dengan metode *content-based filtering*.
 
 ## Business Understanding
 ### Problem Statements
@@ -26,7 +27,7 @@ Solusi yang dilakukan untuk memenuhi tujuan dari proyek ini di antaranya:
   
   Poin pra-pemrosesan data akan dijelaskan secara rinci pada bagian `Data Preparation`.
   
-- Untuk pembuatan sistem rekomendasi, saya memilih dua metode yaitu *content-based filtering* menggunakan algoritma *weighted-rating* dan *collaborative filtering* menggunakan algoritma K-NN (K-Nearest Neighbor). Pemilihan algoritma tersebut karena 
+- Untuk pembuatan sistem rekomendasi, saya memilih dua metode yaitu *content-based filtering* menggunakan algoritma *weighted-rating* dan *collaborative filtering* menggunakan algoritma K-NN (*K-Nearest Neighbor*). Pemilihan algoritma tersebut karena 
 
   Selain itu, berikut ini adalah kelebihan dan kelemahan algoritma KNN:
   
@@ -79,42 +80,45 @@ Kemudian terdapat juga visualisasi data untuk kolom `Book-Rating`:
 
 ## Data Preparation
 Berikut adalah tahapan pra-pemrosesan data seperti yang telah dijelaskan pada *solution statements*:
-- Menghapus data yang kosong
-    |     |     |
-    | --- | --- |
-    |Date |0    |
-    |Close|29   |
+
+- Pembersihan data yang unik
+  
+  Pembersihan data yang unik dilakukan karena adanya kejanggalan pada data di kolom `Year-of-Publication`. Data tersebut dapat dilihat sebagai berikut:
+  
+  ![Data Unik](https://user-images.githubusercontent.com/41296422/139228416-1d67cd4a-21fb-4ee1-8ac7-201269c56f91.JPG)
+  
+  Dapat kita lihat bahwa pada kolom tersebut ada ketidaksesuaian data yaitu **DK Publishing INC** dan **Gallimard**. Maka, data yang berindeks dengan nilai tersebut akan dihapus.
     
-    Menghapus data yang kosong adalah salah satu solusi untuk mengatasi *missing value*. Pada saat menganalisis data tersebut, ternyata nilai *null* merupakan data di hari libur dimana tidak ada perdagangan dalam hari tersebut. Maka, alangkah lebih baik untuk dihilangkan.
-- Melakukan **pembagian** dataset menjadi dua bagian dengan persentase 80% untuk data latih dan 20% untuk data uji
-    Pada proses pengujian model, maka perlu dilakukan pembagian dataset menjadi dua atau tiga bagian. Pada proyek ini dilakukan dua bagian saja yakni pada data latih dan data uji. Data latih terbagi dengan rasio 80% dari data asli, dimana dilakukan sepenuhnya untuk melatih model, sedangkan data uji terbagi dengan rasio 20% dari data asli merupakan data yang belum pernah dilihat oleh model dan diharapkan model dapat memiliki performa yang sama baiknya pada data uji seperti pada data latih. Karena pada dataset tersebut bersifat *univariate*, cara membagi data tersebut dengan membuat batasan data yang dijangkau.
-- Melakukan **standarisasi data** pada fitur data
-  Standarisasi dilakukan berfungsi untuk membuat komputasi dari pembuatan model dapat berjalan lebih cepat karena rentang datanya hanya antara 0-1. Ada berbagai cara standarisasi, akan tetapi pada pemodelan kali ini menggunakan MinMaxScaler. Berikut adalah rumus dari MinMaxScaler:
+- Pembersihan data yang kosong (*missing value*)
 
-  <img src="https://user-images.githubusercontent.com/41296422/137363538-3d725636-fb74-4ec5-9f55-0fde810b5c71.png" width="30%" height="30%">
+  Setelah penyatuan data pada proses sebelumnya dilakukan, ternyata masih ada data yang kosong pada kolom `Book-Author`
+  
+  ![data kosong](https://user-images.githubusercontent.com/41296422/139229230-e930ecb7-311f-494e-93a1-f31629f66475.JPG)
+    
+    Karena pada data tersebut hanya ada satu data saja yang kosong, maka saya menghapusnya. Proses penghapusan data yang kosong adalah salah satu solusi untuk mengatasi *missing value*.
+    
+- Pembersihan data yang memiliki rating 0
 
-  Pada rumus tersebut, simbol `x` mewakili data yang diinputkan. MinMaxScaler sendiri bekerja dengan cara data asli akan dikurangi dengan data terkecil lalu dibagi dengan pengurungan dari data terbesar dan data terkecil.
-- Penggunaan TimeseriesGenerator
-  Data *time series* harus diubah menjadi struktur sampel dengan komponen *input* dan *output* sebelum dapat digunakan agar sesuai dengan *supervised learning model*. Ini bisa menjadi tantangan jika harus melakukan transformasi ini secara *manual*. TimeseriesGenerator salah satu solusi untuk mengubah data deret waktu *univariate* secara otomatis menjadi sampel, dan siap untuk melatih model *machine learning* [[8]](https://machinelearningmastery.com/how-to-use-the-timeseriesgenerator-for-time-series-forecasting-in-keras/).
+  Proses ini dilakukan berfungsi untuk mengoptimalkan sistem rekomendasi buku dimana dapat dikatakan bahwa buku yang belum diberi rating maka bisa jadi belum sesuai dengan standar rekomendasi. Rating yang saya gunakan untuk sistem ini adalah dari 1 - 10. (cari alasannya)
 
 ## Modelling
-Setelah melakukan pra-pemrosesan data yang baik pada tahap modeling akan dilakukan dua hal, yakni tahap pembuatan model *baseline* dan pembuatan model yang dikembangkan.
-- Model *Baseline*
-  Pada tahap ini saya membuat model dasar dengan menggunakan modul tensorflow yakni LSTM tanpa menggunakan parameter tambahan. Lalu melakukan prediksi kepada data ujinya.
-- Model yang dikembangkan
-  Kemudian setelah melihat kinerja model baseline, agar dapat bekerja lebih optimal lagi maka digunakan sebuah fungsi untuk mencari *hyperparameter* yang optimal dengan cara membuat *custom loss function*, menambahkan *layer* LSTM, dan penerapan *learning rate* pada *optimizer function*. Setelah ditemukan yang optimal, kemudian *hyperparameter* tersebut diterapkan ke model baseline.
+Setelah melakukan pra-pemrosesan data, selanjutnya adalah membuat sistem rekomendasi buku dengan metode *content-based filtering* menggunakan algoritma *weighted-rating* dan *collaborative filtering* menggunakan algoritma K-NN (*K-Nearest Neighbor*).
+- Menggunakan *Weighted-Rating*
 
-Hasilnya dapat kita lihat pada grafik berikut ini:
-**Model *Baseline***
-![newplot (3)](https://user-images.githubusercontent.com/41296422/137366546-6eabe9a2-d759-4bcd-ad28-9e156d12c3ea.png)
+  Pada proses rekomendasi buku yaitu *content-based filtering*, saya membuat model dengan menggunakan algoritma *weighted-rating* dimana model tersebut akan mencari buku terbaik dengan cara mengurutkan bobot nilai rating dari sebuah buku mulai dari terbesar hingga terkecil. Pada gambar di bawah ini, saya mencontohkan 10 buku terbaik untuk bisa dibaca oleh pengguna.
 
-**Model yang dikembangkan**
-![newplot (2)](https://user-images.githubusercontent.com/41296422/137366585-2cff2287-6756-48c2-a670-fb9a1434631d.png)
+  ![data bobot](https://user-images.githubusercontent.com/41296422/139231834-f3c637bd-4bf0-4936-882b-f99f2f581695.JPG)
+  
+- Menggunakan K-NN (*K-Nearest Neighbor*)
 
-Secara kasat mata, dari kedua model tersebut dapat memprediksi data uji dengan baik, akan tetapi kita harus memilih model manakah yang terbaik dengan cara mencari model dengan nilai *error rate* terkecil.
+  Selanjutnya, pada proses rekomendasi buku yaitu *collaborative filtering*, saya membuat model dengan menggunakan algoritma K-NN dimana model tersebut akan mencari buku yang relevan dengan buku yang sudah dibaca oleh pengguna. Algoritma ini bekerja mengacu dari nilai rating buku yang sudah dibaca pengguna dengan 1000 buku terbaik yang lainnya dan kesamaan buku yang telah dibaca oleh pengguna lain. Berikut adalah contoh rekomendasi buku untuk salah satu pengguna dengan memperhatikan kesamaan buku yang telah dibaca oleh 5 pengguna lain.
+  
+  ![pengguna mirip](https://user-images.githubusercontent.com/41296422/139233346-ab78d4b9-bc5f-4a49-9909-81d027649917.JPG)
+  
+  ![buku rekomendasi](https://user-images.githubusercontent.com/41296422/139233997-cc541d2d-f843-41f3-8edc-41180ac3e46f.JPG)
 
 ## Evaluating
-Pada proyek ini, model yang dibuat merupakan kasus regresi dan menggunakan metriks perhitungan *Root Mean Squared Error* (RMSE) dan *Mean Absolute Error* (MAE). Penggunaan metriks tersebut karena memberikan bobot yang relatif tinggi untuk kesalahan besar. Berikut adalah rumus dari perhitungan RMSE dan MAE:
+Pada proyek ini, perhitungan evaluasi untuk algoritma K-NN menggunakan metriks *Root Mean Squared Error* (RMSE) dan *Mean Absolute Error* (MAE). Penggunaan metriks tersebut karena memberikan bobot yang relatif tinggi untuk kesalahan besar. Berikut adalah rumus dari perhitungan RMSE dan MAE:
 
 **RMSE**
 
@@ -132,25 +136,9 @@ Pada tabel di bawah ini adalah hasil dari perhitungan RMSE dan MAE dari kedua mo
 
 ||Root Mean Squared Error|Mean Absolute Error|
 |------|----------|-------|
-|Model *Baseline*|0.002242|0.001706|
-|Model yang dikembangkan|0.001476|0.001147|
+|Model K-NN|2.1909|2.0000|
 
-Dapat disimpulkan bahwa, model yang dikembangkan lebih baik daripada model *baseline*.
+Dapat disimpulkan bahwa, algoritma *weighted-rating* dan K-NN dapat digunakan untuk memberikan rekomendasi buku. Tetapi, melihat nilai *error rate* yang ada pada tabel di atas masih sangat memungkinkan untuk menguranginya, alangkah baiknya dapat dikembangkan dengan metode *hyperparameter tuning* atau menggunakan algoritma lain misalnya DNN (*Deep Neural Network*).
 
-## *References*
+## Referensi
 
-[[1]](https://ojs.unud.ac.id/index.php/bse/article/view/2195) Alwiyah dan Liyanto, “Analisis Teknikal Untuk Mendapatkan Profit,” Bul. Stud. Ekon., vol. 17, no. 2, hal. 221–228, 2012.
-
-[[2]](https://doi.org/10.3390/a13080186)	M. S. Islam, E. Hossain, A. Rahman, M. S. Hossain, dan K. Andersson, “A Review on Recent Advancements in FOREX Currency Prediction,” Algorithms, vol. 13, no. 8, hal. 186, Jul 2020, https://doi.org/10.3390/a13080186.
-
-[[3]](https://doi.org/10.24176/simet.v6i2.453)	R. H. Kusumodestoni dan S. Suyatno, “PREDIKSI FOREX MENGGUNAKAN MODEL NEURAL NETWORK,” Simetris  J. Tek. Mesin, Elektro dan Ilmu Komput., vol. 6, no. 2, hal. 205, Nov 2015, https://doi.org/10.24176/simet.v6i2.453.
-
-[[4]](https://doi.org/10.1109/ICACCI.2017.8125846)	R. Vinayakumar, K. P. Soman, dan P. Poornachandran, “Long short-term memory based operation log anomaly detection,” in 2017 International Conference on Advances in Computing, Communications and Informatics (ICACCI), Sep 2017, hal. 236–242, https://doi.org/10.1109/ICACCI.2017.8125846.
-
-[[5]](https://ntnuopen.ntnu.no/ntnu-xmlui/bitstream/handle/11250/2559922/18579_FULLTEXT.pdf?sequence=1)	S. Øyen, “Forecasting Multivariate Time Series Data Using Neural Networks,” Nor. Univ. Sci. Technol., no. June, 2018, [Daring]. Tersedia pada: https://ntnuopen.ntnu.no/ntnu-xmlui/bitstream/handle/11250/2559922/18579_FULLTEXT.pdf?sequence=1.
-
-[[6]](https://doi.org/10.1007/978-981-10-2669-0)  H. Zhang, Q. Yan, G. Zhang, dan Z. Jiang, Theory, Methodology, Tools and Applications for Modeling and Simulation of Complex Systems, vol. 643, no. October. Singapore: Springer Singapore, 2016. https://doi.org/10.1007/978-981-10-2669-0.
-
-[[7]](https://doi.org/10.1109/CVPR.2018.00572)	S. Li, W. Li, C. Cook, C. Zhu, dan Y. Gao, “Independently Recurrent Neural Network (IndRNN): Building A Longer and Deeper RNN,” Proc. IEEE Comput. Soc. Conf. Comput. Vis. Pattern Recognit., no. 1, hal. 5457–5466, 2018, https://doi.org/10.1109/CVPR.2018.00572.
-
-[[8]](https://machinelearningmastery.com/how-to-use-the-timeseriesgenerator-for-time-series-forecasting-in-keras/)	J. Brownlee, “How to Use the TimeseriesGenerator for Time Series Forecasting in Keras,” 2018. https://machinelearningmastery.com/how-to-use-the-timeseriesgenerator-for-time-series-forecasting-in-keras/ (diakses Okt 13, 2021).
