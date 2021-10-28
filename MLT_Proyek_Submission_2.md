@@ -132,7 +132,7 @@ Nilai RMSE didapatkan dari perhitungan jumlah setiap nilai prediksi dikurangi ni
 
 Nilai MAE didapatkan dari perhitungan jumlah setiap nilai asli dikurangi nilai prediksi dipangkat dua lalu dibagikan dengan banyaknya data, dan nilai tersebut mutlak (tidak negatif).
 
-Pada tabel di bawah ini adalah hasil dari perhitungan RMSE dan MAE dari kedua model di atas.
+Pada tabel di bawah ini adalah hasil dari perhitungan RMSE dan MAE dari nilai rating buku yang telah dibaca pengguna dengan nilai rating buku rekomendasi.
 
 ||Root Mean Squared Error|Mean Absolute Error|
 |------|----------|-------|
