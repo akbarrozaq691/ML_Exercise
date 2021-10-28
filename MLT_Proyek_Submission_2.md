@@ -42,7 +42,7 @@ Solusi yang dilakukan untuk memenuhi tujuan dari proyek ini di antaranya:
     - `R` adalah nilai rata-rata dari rating sebuah buku
     - `C` adalah suara rata-rata di seluruh laporan pada sebuah data
     
-    Dengan metode ini, dapat memberikan hasil rekomendasi buku dengan cara mengurutkan mulai dari bobot tertinggi hingga terendah. Selain itu, berikut ini adalah kelebihan dan kelemahan dari algoritma ini [[8]](https://jurnal.kwikkiangie.ac.id/index.php/JIB/article/view/711/463):
+    Dengan algoritma ini, dapat memberikan hasil rekomendasi buku dengan cara mengurutkan mulai dari bobot tertinggi hingga terendah. Selain itu, berikut ini adalah kelebihan dan kelemahan dari algoritma ini [[8]](https://jurnal.kwikkiangie.ac.id/index.php/JIB/article/view/711/463):
     - Kelebihan
       - Konsep yang sederhana untuk melakukan pembobotan
       - Mempercepat proses perhitungan kriteria
@@ -52,9 +52,25 @@ Solusi yang dilakukan untuk memenuhi tujuan dari proyek ini di antaranya:
     
   - K-NN (*K-Nearest Neighbor*)
   
-    K-NN singkatan dari *K-Nearest Neighbor* dimana merupakan sebuah metode untuk melakukan klasifikasi terhadap objek berdasarkan data pembelajaran yang jaraknya paling dekat dengan objek tersebut [[9]](https://journal.unhas.ac.id/index.php/jmsk/article/download/3399/1936). Sehingga sangat cocok untuk metode *collaborative filtering* saat ini. 
+    K-NN singkatan dari *K-Nearest Neighbor* dimana merupakan sebuah metode untuk melakukan klasifikasi terhadap objek berdasarkan data pembelajaran yang jaraknya paling dekat dengan objek tersebut [[9]](https://journal.unhas.ac.id/index.php/jmsk/article/download/3399/1936). Sehingga sangat cocok untuk metode *collaborative filtering* saat ini. Berikut adalah cara kerja algoritma ini (diterjemahkan dari [[10]](https://www.researchgate.net/publication/338718633_Optimization_of_K_Value_at_the_K-NN_algorithm_in_clustering_using_the_expectation_maximization_algorithm)):
+    - Memasukkan data
+    - Inisialisasi nilai K (banyaknya tetangga / kelompok)
+    - Kalkukasi jarak dengan euclidian dengan rumus sebagai berikut:
+      
+      <img src="https://user-images.githubusercontent.com/41296422/139250571-4744d4b3-39c8-40d9-b239-2f5d8fceda5e.png" width="25%" height="25%">
+      
+    - Mengurutkan hasil kalkulasi jarak
+    - Memilih alternatif yang paling banyak
+    - Hasil penentuan data berdasarkan nilai yang telah dihitung sebelumnya
   
-  Selain itu, berikut ini adalah kelebihan dan kelemahan algoritma K-NN:
+    Dengan algoritma ini, dapat memberikan hasil user terdekat dengan user yang dipilih dan rekomendasi buku dengan cara mencari buku yang sesuai dengan user yang lain juga. Selain itu, berikut ini adalah kelebihan dan kelemahan algoritma K-NN [[11]](https://www.researchgate.net/publication/291457761_Optimasi_Teknik_Klasifikasi_Modified_k_Nearest_Neighbor_Menggunakan_Algoritma_Genetika):
+    - Kelebihan:
+      - Sederhana dan mudah dipelajari
+      - Pelatihan sangat cepat
+      - tahan terhadap data yang memiliki derau
+    - Kekurangan:
+      - Komputasi Kompleks
+      - Keterbatasan Memori
   
 ## Data Understanding
 ![book](https://user-images.githubusercontent.com/41296422/139196256-e84cc6f6-8f6f-4c98-8dfe-011a8619540a.JPG)
