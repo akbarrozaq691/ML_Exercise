@@ -3,6 +3,7 @@
 ## Domain Proyek
 Domain proyek yang dipilih dalam proyek *machine learning* ini adalah mengenai **Sistem Rekomendasi** dengan judul proyek "Penerapan Metode *Content-Based Filtering* dan *Collaborative Filtering* untuk Sistem Rekomendasi Buku Bacaan".
 
+Buku merupakan balbal
 Sebagai pembaca pasti akan bingung memilih buku mana lagi yang relevan dengan buku sebelumnya yang telah dibaca. Maka daripada itu, saya membuat sebuah sistem untuk merekomendasikan beberapa buku yang berkaitan dengan buku pembaca sebelumnya. Selain itu, saya juga membuat sistem rekomendasi kepada pengguna baru yang ingin membaca buku pertama kali.
 
 ## Business Understanding
@@ -25,7 +26,7 @@ Solusi yang dilakukan untuk memenuhi tujuan dari proyek ini di antaranya:
   
   Poin pra-pemrosesan data akan dijelaskan secara rinci pada bagian `Data Preparation`.
   
-- Untuk pembuatan sistem rekomendasi, saya memilih dua metode yaitu *content-based filtering* menggunakan algoritma *weighted-rating* dan *collaborative filtering* menggunakan algoritma K-NN (K-Nearest Neighbor). 
+- Untuk pembuatan sistem rekomendasi, saya memilih dua metode yaitu *content-based filtering* menggunakan algoritma *weighted-rating* dan *collaborative filtering* menggunakan algoritma K-NN (K-Nearest Neighbor). Pemilihan algoritma tersebut karena 
 
   Selain itu, berikut ini adalah kelebihan dan kelemahan algoritma KNN:
   
@@ -44,26 +45,37 @@ Dataset: [Book Recommendation Dataset](https://www.kaggle.com/arashnic/book-reco
 |Jenis dan Ukuran Berkas  |Zip (107MB)                                                                                               |
 
 Terdapat 3 file yang didownload yaitu: `Books.csv`, `Ratings.csv`, `Users.csv`. Berikut adalah rincian dari ketiga file tersebut:
+
 1. `Books.csv`
-  Pada file tersebut, berisi informasi metriks data buku dengan jumlah 271.360 data. Terdapat 7 buah data objek dengan rincian sebagai berikut:
-  - `ISBN`: Blbal
-  - `Book-Title`: sdfsdf
+    
+    Pada file dataset tersebut, berisi informasi metriks data buku dengan jumlah 271.360 data. Terdapat 7 buah data bertipe *object*. Dataset tersebut memiliki data kosong pada kolom ***Year of Publication*** dan ***Image-URL-L***. Untuk mengenal variabel apa saja pada dataset tersebut, dapat dilihat rincian sebagai berikut:
+    - `ISBN`: Kode pengidentifikasian buku yang bersifat unik (kode buku)
+    - `Book-Title`: Judul dari buku yang ada
+    - `Book-Author`: Penulis dari buku
+    - `Year-Of-Publication`: Tahun diterbitnya buku
+    - `Publisher`: Tempat dimana buku tersebut dicetak
+    - `Image-URL-S`: Alamat URL gambar sampul buku ukuran kecil
+    - `Image-URL-M`: Alamat URL gambar sampul buku ukuran sedang
+    - `Image-URL-L`: Alamat URL gambar sampul buku ukuran besar
+
 2. `Ratings.csv`
+
+    Pada file dataset tersebut, berisi informasi metriks data rating buku dengan jumlah 1.149.780 data. Terdapat 2 buah data bertipe *integer* dan 1 data bertipe *object*. Dataset tersebut tidak memiliki data kosong. Untuk mengenal variabel apa saja pada dataset tersebut, dapat dilihat rincian sebagai berikut:
+   - `ISBN`: Kode pengidentifikasian buku yang bersifat unik (kode buku), nantinya akan direlasikan dengan dataset `books.csv`
+   - `User-ID`: ID dari pengguna sebelumnya
+   - `Book-Rating`: Penilaian tentang buku tersebut
+
 3. `Users.csv`
 
+    Pada file dataset tersebut, berisi informasi metriks data pengguna buku dengan jumlah 278.858 data. Terdapat 1 buah data bertipe *integer*, 1 buah data bertipe *float*, dan 1 data bertipe *object*. Dataset tersebut memiliki data kosong pada kolom ***Age*** / umur. Untuk mengenal variabel apa saja pada dataset tersebut, dapat dilihat rincian sebagai berikut:
+   - `User-ID`: ID dari pengguna sebelumnya, nantinya akan direlasikan dengan dataset `ratings.csv`
+   - `Location`: Tempat asal dari pengguna
+   - `Age`: Umur dari pengguna
 
-berisi informasi metriks nilai tukar uang EUR/USD dengan jumlah 4663 data. Terdapat 6 buah data numerik (tipe data float64) dan 1 buah data *date time* (tipe data datetime64). Dataset tersebut memiliki data kosong kecuali pada kolom tanggal. Untuk mengenal variabel apa saja pada dataset tersebut, dapat dilihat pada poin-poin sebagai berikut:
-1. `Date`: Tanggal dimana menunjukkan waktu terjadinya pembukaan dan penutup harga, pada dataset kali ini, data tersebut berisi waktu harian dan sangat penting untuk dianalisis apakah harga naik / turun dalam satu hari terakhir
-2. `Open`: Harga pertama kali transaksi dilakukan pada hari itu. Harga *open* tersebut mencerminkan semua informasi pasar yang ada, yang terjadi atau muncul diantara harga penutupan sehari sebelumnya dan ketika saat-saat terakhir pemodal boleh memasukkan order ke mesin bursa.
-3. `High`: Kisaran harga pergerakan harian dari saham tersebut dimana pemodal memiliki keberanian atau rasionalitas untuk melakukan posisi beli.
-4. `Low`: Kisaran harga pergerakan harian dari saham tersebut dimana pemodal memiliki keberanian atau rasionalitas untuk melakukan posisi jual.
-5. `Close`: Harga close ini mencerminkan semua informasi yang ada pada semua pelaku pasar (terutama pelaku pasar institusi yang memiliki informasi yang lebih akurat) pada saat perdagangan saham tersebut berakhir.
-6. `Adjusted Close`: Seperti halnya variabel close, variabel adjust close merupakan harga penutupan yang disesuaikan.
-7. `Volume`: Representasi dari aktivitas yang berlangsung selama suatu periode trading.
+Pada kasus kali ini, sebelum melakukan tahap pengujian data, 3 data tersebut akan disatukan terlebih dahulu. Setelah penggabungan data tersebut, saya memilih variabel `User-ID`, `ISBN`, `Book-Rating`, `Book-Title`, `Book-Author`, dan `Year-Of-Publication` karena pada saat pemodelan nantinya akan diberikan rekomendasi dengan acuan rating buku.
 
-Pada kasus kali ini yang akan diterapkan adalah variabel `Date` dan `Close` karena keduanya bisa memicu signal beli atau signal jual untuk waktu yang akan datang.
-Kemudian terdapat juga visualisasi data untuk kolom `Close` dengan `Date` sebagai indeksnya:
-![newplot (1)](https://user-images.githubusercontent.com/41296422/137333358-6fb353be-5227-4e1e-9895-881e86f51f3b.png)
+Kemudian terdapat juga visualisasi data untuk kolom `Book-Rating`:
+![book-rating](https://user-images.githubusercontent.com/41296422/139227431-d468d984-47db-4d6b-b1e3-22987ce8910b.png)
 
 ## Data Preparation
 Berikut adalah tahapan pra-pemrosesan data seperti yang telah dijelaskan pada *solution statements*:
