@@ -156,4 +156,4 @@ Dapat disimpulkan bahwa, model yang dikembangkan lebih baik daripada model *base
 
 [[7]](https://doi.org/10.1109/CVPR.2018.00572)	S. Li, W. Li, C. Cook, C. Zhu, dan Y. Gao, “Independently Recurrent Neural Network (IndRNN): Building A Longer and Deeper RNN,” Proc. IEEE Comput. Soc. Conf. Comput. Vis. Pattern Recognit., no. 1, hal. 5457–5466, 2018, https://doi.org/10.1109/CVPR.2018.00572.
 
-[[8]](https://machinelearningmastery.com/how-to-use-the-timeseriesgenerator-for-time-series-forecasting-in-keras/)	J. Brownlee, “How to Use the TimeseriesGenerator for Time Series Forecasting in Keras,” 2018. https://machinelearningmastery.com/how-to-use-the-timeseriesgenerator-for-time-series-forecasting-in-keras/ (diakses Okt 13, 2021).
+[[8]](https://machinelearningmastery.com/how-to-use-the-timeseriesgenerator-for-time-series-forecasting-in-keras/)	J. Brownlee, “How to Use the TimeseriesGenerator for Time Series Forecasting in Keras,” 2018. https://machinelearningmastery.com/how-to-use-the-timeseriesgenerator-for-time-series-forecasting-in-keras/ (diakses Okt 13, 2021)
